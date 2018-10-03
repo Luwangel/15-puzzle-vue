@@ -5,5 +5,8 @@
     "repository": "git@github.com:Luwangel/15-puzzle-vue.git",
     "author": "Luwangel <adrien.amoros@gmail.com>",
     "license": "MIT",
-    "private": true
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ]
 }
