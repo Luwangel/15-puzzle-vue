@@ -1,0 +1,9 @@
+{
+    "name": "15-puzzle-vue",
+    "version": "1.0.0",
+    "description": "Play the 15-puzzle",
+    "repository": "git@github.com:Luwangel/15-puzzle-vue.git",
+    "author": "Luwangel <adrien.amoros@gmail.com>",
+    "license": "MIT",
+    "private": true
+}
