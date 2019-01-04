@@ -1,14 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p>{{ myGame }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Game",
   props: {
     msg: String
+  },
+  computed: mapState({
+    myGame: state => state.games.myGame
+  }),
+  created() {
+    this.$store.dispatch("games/buildInitialGame");
   }
 };
 </script>
