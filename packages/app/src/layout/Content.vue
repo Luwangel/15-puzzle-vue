@@ -1,18 +1,17 @@
 
 <template>
   <div id="content">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="15 Puzzle Game"/>
+    <Game msg="15 Puzzle Game"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld.vue";
+import Game from "../components/Game.vue";
 
 export default {
   name: "content",
   components: {
-    HelloWorld
+    Game
   }
 };
 </script>
