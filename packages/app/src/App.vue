@@ -26,3 +26,5 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+<style src="./assets/normalize.css"></style>
