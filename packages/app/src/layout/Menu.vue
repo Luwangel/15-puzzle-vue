@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: "Menu",
+  name: "menu",
   props: {
     title: String
   }
 };
 </script>
 
-<style>
+<style scoped>
 nav {
   background-color: #fff;
   position: fixed;
