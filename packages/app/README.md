@@ -1,9 +1,11 @@
 # 15-puzzle-app
 
+Vuejs user interface to play the 15-puzzle game.
+
 ## Project setup
 
 ``` bash
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -16,12 +18,6 @@ yarn run serve
 
 ``` bash
 yarn run build
-```
-
-### Run your tests
-
-``` bash
-yarn run test
 ```
 
 ### Lints and fixes files
