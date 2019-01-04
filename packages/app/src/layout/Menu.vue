@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "menu",
+  name: "MyMenu",
   props: {
     title: { type: String, default: "Play the 15 Puzzle Game" }
   }
