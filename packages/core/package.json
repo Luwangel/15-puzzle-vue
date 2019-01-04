@@ -1,7 +1,8 @@
 {
     "name": "core",
     "version": "1.0.0",
-    "main": "build/core.js",
+    "private": true,
+    "dependencies": {},
     "devDependencies": {
         "babel-eslint": "~10.0.1",
         "eslint": "~5.11.1",
@@ -11,6 +12,5 @@
         "eslint-plugin-prettier": "~3.0.1",
         "jest": "~23.6.0",
         "prettier": "~1.15.3"
-    },
-    "dependencies": {}
+    }
 }
