@@ -8,6 +8,10 @@ run: ## Run the website for development purpose. Usage: "make run".
 	cd packages/app && \
 		yarn run serve
 
-build: ## Build the website for propduction. Usage "make build".
+build-app: ## Build the website for propduction. Usage "make build-app".
 	cd packages/app && \
+		yarn run build
+
+build-core: ## Build the core lib for propduction. Usage "make build-core".
+	cd packages/core && \
 		yarn run build
