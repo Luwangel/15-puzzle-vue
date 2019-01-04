@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>{{ myGame }}</p>
+    <div v-if="myGame">
+      <span class="row" v-for="(row, index) in myGame.currentGrid" :key="index">
+        <span class="tile" v-for="tile in row" :key="tile">{{ tile }}</span>
+      </span>
+    </div>
   </div>
 </template>
 
