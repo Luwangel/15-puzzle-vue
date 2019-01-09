@@ -1,12 +1,15 @@
 <template>
   <div class="grid" v-if="myGame">
     <span class="row" v-for="(row, index) in myGame.currentGrid" :key="index">
-      <span
-        :class="getTileClass(tile)"
-        v-for="tile in row"
-        :key="tile"
-        v-on:click="moveTile(tile)"
-      >{{ tile }}</span>
+      <div :class="getTileClass(tile)" v-for="tile in row" :key="tile" v-on:click="moveTile(tile)">
+        <img
+          v-if="tile!=0 && showPicture"
+          :class="getImageClass(tile)"
+          :alt="`tile ${tile}`"
+          src="../assets/panda_200.jpg"
+        >
+        <span class="tile-text" v-if="showNumbers">{{tile}}</span>
+      </div>
     </span>
   </div>
 </template>
@@ -14,10 +17,23 @@
 <script>
 import { mapState } from "vuex";
 
+const getClippedRegion = (image, x, y, width, height) => {
+  var canvas = document.createElement("canvas"),
+    ctx = canvas.getContext("2d");
+
+  canvas.width = width;
+  canvas.height = height;
+  ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
+
+  return canvas;
+};
+
 export default {
   name: "Grid",
   computed: mapState({
-    myGame: state => state.games.myGame
+    myGame: state => state.games.myGame,
+    showNumbers: state => state.games.showNumbers,
+    showPicture: state => state.games.showPicture
   }),
   methods: {
     getTileClass(tile) {
@@ -25,6 +41,9 @@ export default {
     },
     moveTile(tile) {
       if (tile) this.$store.dispatch("games/moveTile", tile);
+    },
+    getImageClass(tile) {
+      return `picture picture${tile}`;
     }
   }
 };
@@ -41,6 +60,7 @@ export default {
 }
 
 .tile {
+  position: relative;
   height: 40px;
   line-height: 40px;
   width: 40px;
@@ -52,6 +72,13 @@ export default {
   user-select: none;
 }
 
+.tile-text {
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  position: relative;
+}
+
 .tile-empty {
   background-color: white;
   color: white;
@@ -59,6 +86,7 @@ export default {
 
 .tile-occupied {
   background-color: #42b983;
+  cursor: pointer;
 }
 
 .tile-occupied:hover {
@@ -68,5 +96,95 @@ export default {
 .tile-occupied:active {
   background-color: #1c7950;
   border-color: black;
+}
+
+.picture {
+  position: absolute;
+}
+
+.picture1 {
+  clip: rect(0px, 40px, 40px, 0px);
+  left: 0px;
+}
+
+.picture2 {
+  clip: rect(0px, 80px, 40px, 40px);
+  left: -40px;
+}
+
+.picture3 {
+  clip: rect(0px, 120px, 40px, 80px);
+  left: -80px;
+}
+
+.picture4 {
+  clip: rect(0px, 160px, 40px, 120px);
+  left: -120px;
+}
+
+.picture5 {
+  clip: rect(40px, 40px, 80px, 0px);
+  left: 0px;
+  top: -40px;
+}
+
+.picture6 {
+  clip: rect(40px, 80px, 80px, 40px);
+  left: -40px;
+  top: -40px;
+}
+
+.picture7 {
+  clip: rect(40px, 120px, 80px, 80px);
+  left: -80px;
+  top: -40px;
+}
+
+.picture8 {
+  clip: rect(40px, 160px, 80px, 120px);
+  left: -120px;
+  top: -40px;
+}
+
+.picture9 {
+  clip: rect(80px, 40px, 120px, 0px);
+  left: 0px;
+  top: -80px;
+}
+
+.picture10 {
+  clip: rect(80px, 80px, 120px, 40px);
+  left: -40px;
+  top: -80px;
+}
+
+.picture11 {
+  clip: rect(80px, 120px, 120px, 80px);
+  left: -80px;
+  top: -80px;
+}
+
+.picture12 {
+  clip: rect(80px, 160px, 120px, 120px);
+  left: -120px;
+  top: -80px;
+}
+
+.picture13 {
+  clip: rect(120px, 40px, 160px, 0px);
+  left: 0px;
+  top: -120px;
+}
+
+.picture14 {
+  clip: rect(120px, 80px, 160px, 40px);
+  left: -40px;
+  top: -120px;
+}
+
+.picture15 {
+  clip: rect(120px, 120px, 160px, 80px);
+  left: -80px;
+  top: -120px;
 }
 </style>

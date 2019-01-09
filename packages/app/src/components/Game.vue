@@ -5,6 +5,7 @@
     <Grid/>
     <Moves v-if="myGame"/>
     <Victory v-if="myGame"/>
+    <Options/>
     <div>
       <button v-on:click="restart()">Restart game</button>
     </div>
@@ -17,6 +18,7 @@ import Loading from "./Loading.vue";
 import Grid from "./Grid.vue";
 import Victory from "./Victory.vue";
 import Moves from "./Moves.vue";
+import Options from "./Options.vue";
 
 export const getMovesLevel = moves => {
   if (moves === 0) return 0;
@@ -35,7 +37,8 @@ export default {
     Loading,
     Grid,
     Victory,
-    Moves
+    Moves,
+    Options
   },
   computed: mapState({
     myGame: state => state.games.myGame,
@@ -69,6 +72,7 @@ button {
   color: #35495e;
   padding: 10px;
   outline: none;
+  cursor: pointer;
 }
 
 button:hover {
