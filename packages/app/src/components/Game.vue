@@ -1,7 +1,7 @@
 <template>
   <div class="board">
     <h1 class="title">{{ msg }}</h1>
-    <Loading v-if="false"/>
+    <Loading v-if="loading"/>
     <Grid/>
     <Moves v-if="myGame"/>
     <Victory v-if="myGame"/>
@@ -13,10 +13,10 @@
 
 <script>
 import { mapState } from "vuex";
-import Loading from "../components/Loading.vue";
-import Grid from "../components/Grid.vue";
-import Victory from "../components/Victory.vue";
-import Moves from "../components/Moves.vue";
+import Loading from "./Loading.vue";
+import Grid from "./Grid.vue";
+import Victory from "./Victory.vue";
+import Moves from "./Moves.vue";
 
 export const getMovesLevel = moves => {
   if (moves === 0) return 0;

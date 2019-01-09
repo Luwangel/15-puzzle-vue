@@ -1,6 +1,8 @@
 
 <template>
-  <div id="loading">Loading</div>
+  <div id="loading">
+    <img class="loading" alt="loading" src="../assets/loading.gif">
+  </div>
 </template>
 
 <script>
@@ -13,8 +15,13 @@ export default {
 #loading {
   position: absolute;
   height: 200px;
+  line-height: 200px;
   width: 100%;
   margin: auto;
-  top: 200px;
+  top: 120px;
+}
+
+img.loading {
+  height: 200px;
 }
 </style>

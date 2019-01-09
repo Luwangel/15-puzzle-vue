@@ -2,6 +2,7 @@ import { initGame, moveTile } from '../../../../core/src';
 
 const state = {
     myGame: null,
+    loading: false,
 };
 
 const getters = {};
