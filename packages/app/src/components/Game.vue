@@ -62,4 +62,23 @@ export default {
 .title {
   margin: 20px auto;
 }
+
+button {
+  border-radius: 6px;
+  background-color: #42b983;
+  color: #35495e;
+  padding: 10px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #76e4b2;
+  outline: none;
+}
+
+button:active {
+  background-color: #1c7950;
+  color: #42b983;
+  outline: none;
+}
 </style>

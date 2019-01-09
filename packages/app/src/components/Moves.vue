@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .moves-start {
-  color: black;
+  color: inherit;
 }
 
 .moves-bad {
