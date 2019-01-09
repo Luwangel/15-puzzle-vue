@@ -1,4 +1,4 @@
-import { initGame } from '../../../../core/src';
+import { initGame, moveTile } from '../../../../core/src';
 
 const state = {
     myGame: null,
@@ -11,6 +11,11 @@ const actions = {
         initGame().then(newGame => {
             context.commit('setGame', newGame);
         });
+    },
+    moveTile(context, tile) {
+        const currentGame = context.state.myGame;
+        const newGame = moveTile(currentGame, tile);
+        context.commit('setGame', newGame);
     },
 };
 
