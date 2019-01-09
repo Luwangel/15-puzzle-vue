@@ -12,7 +12,10 @@
       </span>
     </div>
     <h1 :class="getMovesClass(myGame.turn)">{{ getMovesText(myGame.turn) }}</h1>
-    <h1 class="victory">{{ getVictoryText(myGame.isVictory, myGame.turn)}}</h1>
+    <div>
+      <h1 class="victory">{{ getVictoryText(myGame.isVictory, myGame.turn)}}</h1>
+      <button v-on:click="restart()">Restart game</button>
+    </div>
   </div>
 </template>
 
@@ -39,6 +42,9 @@ export default {
     this.$store.dispatch("games/buildInitialGame");
   },
   methods: {
+    restart() {
+      this.$store.dispatch("games/buildInitialGame");
+    },
     getTileClass(tile) {
       return `tile ${tile === 0 ? "tile-empty" : "tile-occupied"}`;
     },
