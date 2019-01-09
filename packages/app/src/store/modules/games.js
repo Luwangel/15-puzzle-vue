@@ -8,8 +8,10 @@ const getters = {};
 
 const actions = {
     buildInitialGame(context) {
+        context.commit('setLoading', true);
         initGame().then(newGame => {
             context.commit('setGame', newGame);
+            context.commit('setLoading', false);
         });
     },
     moveTile(context, tile) {
@@ -22,6 +24,9 @@ const actions = {
 const mutations = {
     setGame(state, newGame) {
         state.myGame = newGame;
+    },
+    setLoading(state, loading) {
+        state.loading = loading;
     },
 };
 
