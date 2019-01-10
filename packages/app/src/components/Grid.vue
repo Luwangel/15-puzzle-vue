@@ -1,9 +1,9 @@
 <template>
   <div class="grid" v-if="myGame">
     <span class="row" v-for="(row, index) in myGame.currentGrid" :key="index">
-      <div :class="getTileClass(tile)" v-for="tile in row" :key="tile" v-on:click="moveTile(tile)">
+      <div :class="getTileClass(tile)" v-for="tile in row" :key="tile" @click="moveTile(tile)">
         <img
-          v-if="tile!=0 && showPicture"
+          v-if="tile!==0 && showPicture"
           :class="getImageClass(tile)"
           :alt="`tile ${tile}`"
           src="../assets/panda_200.jpg"
@@ -16,17 +16,6 @@
 
 <script>
 import { mapState } from "vuex";
-
-const getClippedRegion = (image, x, y, width, height) => {
-  var canvas = document.createElement("canvas"),
-    ctx = canvas.getContext("2d");
-
-  canvas.width = width;
-  canvas.height = height;
-  ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
-
-  return canvas;
-};
 
 export default {
   name: "Grid",

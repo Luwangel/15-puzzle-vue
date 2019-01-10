@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Options",
@@ -19,12 +19,10 @@ export default {
     showPicture: state => state.games.showPicture
   }),
   methods: {
-    setShowNumbers(param) {
-      this.$store.dispatch("games/setShowNumbers");
-    },
-    setShowPicture(param) {
-      this.$store.dispatch("games/setShowPicture");
-    }
+    ...mapActions({
+      setShowNumbers: "games/setShowNumbers",
+      setShowPicture: "games/setShowPicture"
+    })
   }
 };
 </script>

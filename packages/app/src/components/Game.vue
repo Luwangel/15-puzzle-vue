@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import Loading from "./Loading.vue";
 import Grid from "./Grid.vue";
 import Victory from "./Victory.vue";
@@ -48,9 +48,9 @@ export default {
     this.$store.dispatch("games/buildInitialGame");
   },
   methods: {
-    restart() {
-      this.$store.dispatch("games/buildInitialGame");
-    }
+    ...mapActions({
+      restart: "games/buildInitialGame"
+    })
   }
 };
 </script>
