@@ -26,7 +26,7 @@ export default {
       return `${moves} move${moves > 1 ? "s" : ""}`;
     },
     getMovesClass(moves) {
-      return movesClasses[getMovesLevel(getMovesLevel(moves))];
+      return movesClasses[getMovesLevel(moves)];
     }
   }
 };
