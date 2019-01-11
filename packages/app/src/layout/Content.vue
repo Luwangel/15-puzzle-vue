@@ -21,3 +21,10 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+
+<style>
+body {
+  color: #35495e;
+}
+</style>
