@@ -36,8 +36,10 @@ const actions = {
         });
     },
     moveTile(context, tile) {
-        const currentGame = context.state.myGame;
-        const newGame = moveTile(currentGame, tile);
+        const myGame = context.state.myGame;
+        const newGame = Object.assign({}, myGame, {
+            ...moveTile(myGame, tile),
+        });
         context.commit('setGame', newGame);
     },
     setShowNumbers(context) {
