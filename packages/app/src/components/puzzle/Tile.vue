@@ -1,24 +1,17 @@
 <template>
   <div class="puzzle-tile" :style="[backgroundStyle, dimensionStyle]">
-    <span v-if="showNumbers" class="puzzle-tile-number">{{number}}</span>
+    <span v-if="showNumber" class="puzzle-tile-number">{{number}}</span>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
   name: "Tile",
   props: {
     number: Number,
-    showNumbers: Boolean,
+    showNumber: Boolean,
     backgroundStyle: Object,
     dimensionStyle: Object
-  },
-  computed: {
-    ...mapState({
-      showNumbers: state => state.games.showNumbers
-    })
   }
 };
 </script>
