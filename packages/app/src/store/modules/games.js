@@ -1,4 +1,9 @@
-import { initGame, moveTile } from '../../../../core/src';
+import {
+    associateTileToBackground,
+    initGame,
+    moveTile,
+} from '../../../../core/src';
+import { buildResponsiveDimension } from '../../../../core/picture';
 
 const state = {
     myGame: null,
@@ -12,6 +17,17 @@ const actions = {
     buildInitialGame(context) {
         context.commit('setLoading', true);
         initGame().then(newGame => {
+            newGame.imageCoords = associateTileToBackground(
+                newGame.resolvedGrid
+            );
+
+            const { dimensionStyle, tileSize } = buildResponsiveDimension(
+                true,
+                newGame.resolvedGrid.length
+            );
+            newGame.dimensionStyle = dimensionStyle;
+            newGame.tileSize = tileSize;
+
             context.commit('setGame', newGame);
             context.commit('setLoading', false);
         });
