@@ -4,13 +4,14 @@
 
 <script>
 import { mapState } from "vuex";
-import { getMovesLevel } from "./Game.vue";
+import { byMoves } from "../../../core/src/levels";
 
 const movesClasses = {
   0: "moves-start",
-  1: "moves-bad",
-  2: "moves-normal",
-  3: "moves-good"
+  4: "moves-bad",
+  3: "moves-normal",
+  2: "moves-good",
+  1: "moves-perfect"
 };
 
 export default {
@@ -26,7 +27,7 @@ export default {
       return `${moves} move${moves > 1 ? "s" : ""}`;
     },
     getMovesClass(moves) {
-      return movesClasses[getMovesLevel(moves)];
+      return movesClasses[byMoves(moves)];
     }
   }
 };
@@ -46,6 +47,10 @@ export default {
 }
 
 .moves-good {
+  color: rgb(64, 202, 59);
+}
+
+.moves-perfect {
   color: rgb(64, 202, 59);
 }
 </style>
