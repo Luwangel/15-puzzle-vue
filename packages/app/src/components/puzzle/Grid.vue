@@ -6,7 +6,7 @@
         <Tile
           v-else
           :number="tile"
-          :showNumber="showNumber"
+          :showNumber="showNumbers"
           @click.prevent.native="moveTile(tile)"
           :backgroundStyle="buildBackground(tile)"
           :dimensionStyle="myGame.dimensionStyle"
