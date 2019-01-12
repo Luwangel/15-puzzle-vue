@@ -1,6 +1,5 @@
 <template>
   <div class="board">
-    <h1 class="title">{{ msg }}</h1>
     <Loading v-if="loading"/>
     <Grid/>
     <Moves v-if="myGame"/>
@@ -60,11 +59,6 @@ export default {
   display: flex;
   flex-direction: column;
   margin: auto;
-}
-
-.title {
-  color: #42b983;
-  margin: 20px auto;
 }
 
 button {
