@@ -1,14 +1,17 @@
 <template>
-  <div class="grid" v-if="myGame">
-    <span class="row" v-for="(row, index) in myGame.currentGrid" :key="index">
-      <TileEmpty v-if="index === 0"/>
-      <Tile
-        v-else
-        :number="index"
-        @click="moveTile(index)"
-        :backgroundStyle="buildBackground(index)"
-        :dimensionStyle="myGame.dimensionStyle"
-      />
+  <div class="puzzle-grid" v-if="myGame">
+    <span class="puzzle-column" v-for="(row, rowIndex) in myGame.currentGrid" :key="rowIndex">
+      <span class="puzzle-row" v-for="tile in row" :key="tile">
+        <TileEmpty v-if="tile === 0" :dimensionStyle="myGame.dimensionStyle"/>
+        <Tile
+          v-else
+          :number="tile"
+          :showNumber="showNumber"
+          @click.prevent.native="moveTile(tile)"
+          :backgroundStyle="buildBackground(tile)"
+          :dimensionStyle="myGame.dimensionStyle"
+        />
+      </span>
     </span>
   </div>
 </template>
@@ -28,7 +31,8 @@ export default {
   },
   computed: {
     ...mapState({
-      myGame: state => state.games.myGame
+      myGame: state => state.games.myGame,
+      showNumbers: state => state.games.showNumbers
     })
   },
   methods: {
@@ -48,12 +52,17 @@ export default {
 </script>
 
 <style scoped>
-.grid {
-  margin: auto;
-  height: 200px;
+.puzzle-column {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.row {
-  display: table-row;
+.puzzle-row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>
