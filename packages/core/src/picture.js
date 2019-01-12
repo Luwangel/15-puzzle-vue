@@ -13,12 +13,10 @@ export const divideBackgroundStyle = (imageSize, nbOfTiles) =>
 
 export const buildBackgroundStyle = (
     nbTiles,
-    tileImageUrl,
     tileImageCoords,
     tileSize,
     unit = 'px',
 ) => ({
-    backgroundImage: `url(${tileImageUrl})`,
     backgroundPosition: tileImageCoords,
     backgroundSize: `${(nbTiles + 1) * tileSize}${unit}`,
 });
