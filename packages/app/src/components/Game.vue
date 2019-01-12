@@ -13,19 +13,12 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
+
 import Loading from "./Loading.vue";
 import Grid from "./puzzle/Grid.vue";
 import Victory from "./Victory.vue";
 import Moves from "./Moves.vue";
 import Options from "./Options.vue";
-
-export const getMovesLevel = moves => {
-  if (moves === 0) return 0;
-  if (moves < 50) return 3;
-  if (moves > 100) return 1;
-
-  return 2;
-};
 
 export default {
   name: "Game",
