@@ -25,7 +25,7 @@ const actions = {
             );
 
             const { dimensionStyle, tileSize } = buildResponsiveDimension(
-                true,
+                false,
                 newGame.resolvedGrid.length
             );
             newGame.dimensionStyle = dimensionStyle;

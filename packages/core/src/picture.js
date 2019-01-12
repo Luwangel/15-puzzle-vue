@@ -59,13 +59,11 @@ export const buildResponsiveDimension = (isResponsive, nbTiles) => {
 export const buildResponsiveBackground = (
     isResponsive,
     nbTiles,
-    tileImageUrl,
     tileImageCoords,
     tileSize,
 ) =>
     buildBackgroundStyle(
         nbTiles,
-        tileImageUrl,
         tileImageCoords,
         tileSize,
         getUnits(isResponsive),

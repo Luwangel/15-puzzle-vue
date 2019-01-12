@@ -7,6 +7,7 @@
         :number="index"
         @click="moveTile(index)"
         :backgroundStyle="buildBackground(index)"
+        :dimensionStyle="myGame.dimensionStyle"
       />
     </span>
   </div>
@@ -18,8 +19,6 @@ import Tile from "./Tile.vue";
 import TileEmpty from "./TileEmpty.vue";
 
 import { buildResponsiveBackground } from "../../../../core/src/picture";
-
-const imageUrl = "../../assets/panda.jpg";
 
 export default {
   name: "Grid",
@@ -38,9 +37,8 @@ export default {
     }),
     buildBackground(tile) {
       return buildResponsiveBackground(
-        true,
+        false,
         this.myGame.size,
-        imageUrl,
         this.myGame.imageCoords[tile],
         this.myGame.tileSize
       );
