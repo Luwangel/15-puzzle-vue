@@ -1,7 +1,7 @@
 <template>
   <div class="puzzle-grid" v-if="myGame">
-    <span class="puzzle-column" v-for="(row, rowIndex) in myGame.currentGrid" :key="rowIndex">
-      <span class="puzzle-row" v-for="tile in row" :key="tile">
+    <span class="flex" v-for="(row, rowIndex) in myGame.currentGrid" :key="rowIndex">
+      <span class="flex" v-for="tile in row" :key="tile">
         <TileEmpty v-if="tile === 0" :dimensionStyle="myGame.dimensionStyle"/>
         <Tile
           v-else
@@ -52,14 +52,7 @@ export default {
 </script>
 
 <style scoped>
-.puzzle-column {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.puzzle-row {
+.flex {
   align-items: center;
   display: flex;
   flex-direction: row;
