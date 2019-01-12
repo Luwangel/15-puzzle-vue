@@ -63,6 +63,7 @@ export default {
 }
 
 .title {
+  color: #42b983;
   margin: 20px auto;
 }
 
