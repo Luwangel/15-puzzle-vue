@@ -1,20 +1,19 @@
 <template>
-  <div class="puzzle-tile"></div>
+  <div class="puzzle-tile" :style="[dimensionStyle]"></div>
 </template>
 
 <script>
 export default {
-  name: "TileEmpty"
+  name: "TileEmpty",
+  props: {
+    dimensionStyle: Object
+  }
 };
 </script>
 
 <style scoped>
 .puzzle-tile {
-  cursor: pointer;
   user-select: none;
-  background-color: #42b983;
   border-radius: 4px;
-  position: relative;
-  display: table-cell;
 }
 </style>

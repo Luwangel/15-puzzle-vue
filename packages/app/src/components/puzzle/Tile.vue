@@ -20,18 +20,20 @@ export default {
 .puzzle-tile {
   cursor: pointer;
   user-select: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   background-image: url("../../assets/panda.jpg");
-  background-color: #42b983;
   border-radius: 4px;
-  position: relative;
 }
 
 .puzzle-tile:hover {
-  background-color: #76e4b2;
+  filter: brightness(90%);
 }
 
 .puzzle-tile-number {
-  color: #fff;
+  font-size: 20px;
+  color: #42b983;
   text-align: center;
 }
 </style>
