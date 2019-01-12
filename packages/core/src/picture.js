@@ -5,8 +5,8 @@ export const TRANSLATE_DURATION = 100;
 export const TILE_MARGIN = 2;
 export const MAX_TILE_SIZE = 100;
 
-export const DEFAULT_IMAGE_SIZE = 500;
-export const IMAGE_SIZE = 100;
+export const DEFAULT_IMAGE_SIZE = 400; // 400px
+export const IMAGE_SIZE = 100; // 100%
 
 export const divideBackgroundStyle = (imageSize, nbOfTiles) =>
     imageSize / (nbOfTiles + 1);
