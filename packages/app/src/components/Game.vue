@@ -15,7 +15,7 @@
 <script>
 import { mapState, mapActions } from "vuex";
 import Loading from "./Loading.vue";
-import Grid from "./Grid.vue";
+import Grid from "./puzzle/Grid.vue";
 import Victory from "./Victory.vue";
 import Moves from "./Moves.vue";
 import Options from "./Options.vue";
@@ -44,13 +44,13 @@ export default {
     myGame: state => state.games.myGame,
     loading: state => state.games.loading
   }),
-  created() {
-    this.$store.dispatch("games/buildInitialGame");
-  },
   methods: {
     ...mapActions({
       restart: "games/buildInitialGame"
     })
+  },
+  created() {
+    this.restart();
   }
 };
 </script>

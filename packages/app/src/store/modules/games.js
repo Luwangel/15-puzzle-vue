@@ -1,9 +1,10 @@
 import {
+    DEFAULT_SIZE,
     associateTileToBackground,
     initGame,
     moveTile,
 } from '../../../../core/src';
-import { buildResponsiveDimension } from '../../../../core/picture';
+import { buildResponsiveDimension } from '../../../../core/src/picture';
 
 const state = {
     myGame: null,
@@ -16,7 +17,9 @@ const getters = {};
 const actions = {
     buildInitialGame(context) {
         context.commit('setLoading', true);
-        initGame().then(newGame => {
+        initGame(DEFAULT_SIZE).then(newGame => {
+            newGame.size = DEFAULT_SIZE;
+
             newGame.imageCoords = associateTileToBackground(
                 newGame.resolvedGrid
             );
