@@ -1,33 +1,34 @@
 <template>
-  <h1 :class="getMovesClass(moves)">{{ getMovesText(moves) }}</h1>
+  <h1 :class="classes">{{ label }}</h1>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import { byMoves } from "../../../core/src/levels";
-
-const movesClasses = {
-  0: "moves-start",
-  4: "moves-bad",
-  3: "moves-normal",
-  2: "moves-good",
-  1: "moves-perfect"
-};
+import {
+  GOLD,
+  SILVER,
+  BRONZE,
+  NOT_RANKED,
+  levelByMoves
+} from "../../../core/src/levels";
 
 export default {
   name: "Moves",
   props: {
-    msg: String
+    turn: Number
   },
-  computed: mapState({
-    moves: state => state.games.myGame.turn
-  }),
-  methods: {
-    getMovesText(moves) {
-      return `${moves} move${moves > 1 ? "s" : ""}`;
+  computed: {
+    label() {
+      return `${this.turn} move${this.turn > 1 ? "s" : ""}`;
     },
-    getMovesClass(moves) {
-      return movesClasses[byMoves(moves)];
+    classes() {
+      const level = levelByMoves(this.turn);
+      return {
+        "moves-start": level === NOT_RANKED,
+        "moves-bad": level === NOT_RANKED,
+        "moves-normal": level === BRONZE,
+        "moves-good": level === SILVER,
+        "moves-perfect": level === GOLD
+      };
     }
   }
 };
