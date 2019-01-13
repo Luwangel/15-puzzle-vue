@@ -1,12 +1,16 @@
 <template>
   <div class="board">
-    <Loading v-if="loading"/>
-    <Grid/>
-    <Moves v-if="myGame"/>
-    <Victory v-if="myGame"/>
-    <Options/>
+    <div v-if="loading">
+      <Loading/>
+    </div>
+    <div v-else-if="myGame">
+      <Grid/>
+      <Moves v-if="turn" :turn="turn"/>
+      <Victory v-if="isVictory" :turn="turn"/>
+      <Options/>
+    </div>
     <div>
-      <button v-on:click="restart()">Restart game</button>
+      <button @click="restart()">Restart Game</button>
     </div>
   </div>
 </template>
@@ -22,9 +26,6 @@ import Options from "./Options.vue";
 
 export default {
   name: "Game",
-  props: {
-    msg: String
-  },
   components: {
     Loading,
     Grid,
@@ -32,10 +33,14 @@ export default {
     Moves,
     Options
   },
-  computed: mapState({
-    myGame: state => state.games.myGame,
-    loading: state => state.games.loading
-  }),
+  computed: {
+    ...mapState({
+      myGame: state => state.games.myGame,
+      turn: state => (state.games.myGame ? state.games.myGame.turn : -1),
+      isVictory: state => state.games.myGame && state.games.myGame.isVictory,
+      loading: state => state.games.loading
+    })
+  },
   methods: {
     ...mapActions({
       restart: "games/buildInitialGame"
