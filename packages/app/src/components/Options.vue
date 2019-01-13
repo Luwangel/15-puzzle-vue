@@ -1,27 +1,19 @@
 <template>
   <div>
     <label>
-      <input type="checkbox" id="numbers" v-on:change="setShowNumbers">Show numbers
-    </label>
-    <label>
-      <input type="checkbox" id="picture" checked v-on:change="setShowPicture">Show the picture
+      <input type="checkbox" id="numbers" @change="setShowNumbers">Show numbers
     </label>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "Options",
-  computed: mapState({
-    showNumbers: state => state.games.showNumbers,
-    showPicture: state => state.games.showPicture
-  }),
   methods: {
     ...mapActions({
-      setShowNumbers: "games/setShowNumbers",
-      setShowPicture: "games/setShowPicture"
+      setShowNumbers: "games/setShowNumbers"
     })
   }
 };

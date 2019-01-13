@@ -1,38 +1,31 @@
 <template>
   <div class="board">
-    <h1 class="title">{{ msg }}</h1>
-    <Loading v-if="loading"/>
-    <Grid/>
-    <Moves v-if="myGame"/>
-    <Victory v-if="myGame"/>
-    <Options/>
+    <div v-if="loading">
+      <Loading/>
+    </div>
+    <div v-else-if="myGame">
+      <Grid/>
+      <Moves v-if="turn" :turn="turn"/>
+      <Victory v-if="isVictory" :turn="turn"/>
+      <Options/>
+    </div>
     <div>
-      <button v-on:click="restart()">Restart game</button>
+      <button @click="restart()">Restart Game</button>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
+
 import Loading from "./Loading.vue";
-import Grid from "./Grid.vue";
+import Grid from "./puzzle/Grid.vue";
 import Victory from "./Victory.vue";
 import Moves from "./Moves.vue";
 import Options from "./Options.vue";
 
-export const getMovesLevel = moves => {
-  if (moves === 0) return 0;
-  if (moves < 50) return 3;
-  if (moves > 100) return 1;
-
-  return 2;
-};
-
 export default {
   name: "Game",
-  props: {
-    msg: String
-  },
   components: {
     Loading,
     Grid,
@@ -40,17 +33,21 @@ export default {
     Moves,
     Options
   },
-  computed: mapState({
-    myGame: state => state.games.myGame,
-    loading: state => state.games.loading
-  }),
-  created() {
-    this.$store.dispatch("games/buildInitialGame");
+  computed: {
+    ...mapState({
+      myGame: state => state.games.myGame,
+      turn: state => (state.games.myGame ? state.games.myGame.turn : -1),
+      isVictory: state => state.games.myGame && state.games.myGame.isVictory,
+      loading: state => state.games.loading
+    })
   },
   methods: {
     ...mapActions({
       restart: "games/buildInitialGame"
     })
+  },
+  created() {
+    this.restart();
   }
 };
 </script>
@@ -60,10 +57,6 @@ export default {
   display: flex;
   flex-direction: column;
   margin: auto;
-}
-
-.title {
-  margin: 20px auto;
 }
 
 button {

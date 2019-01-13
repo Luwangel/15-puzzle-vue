@@ -1,28 +1,31 @@
 <template>
-  <h1 class="victory">{{ getVictoryText(isVictory, moves)}}</h1>
+  <h1 class="victory">{{ victoryTextByLevel }}</h1>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import { getMovesLevel } from "./Game.vue";
+import {
+  GOLD,
+  SILVER,
+  BRONZE,
+  NOT_RANKED,
+  levelByMoves
+} from "../../../core/src/levels";
 
 const victorySentences = {
-  0: "",
-  1: "You finally finished",
-  2: "You win!",
-  3: "You are a champion!!"
+  [GOLD]: "Congrats, you are now the 15 Puzzle master!",
+  [SILVER]: "You are a champion!",
+  [BRONZE]: "Bravo, You played well.",
+  [NOT_RANKED]: "You finally finished"
 };
 
 export default {
   name: "Victory",
-  computed: mapState({
-    isVictory: state => state.games.myGame.isVictory,
-    moves: state => state.games.myGame.turn
-  }),
-  methods: {
-    getVictoryText(isVictory, moves) {
-      if (!isVictory) return "";
-      return `Victory! ${victorySentences[getMovesLevel(moves)]}`;
+  props: {
+    turn: Number
+  },
+  computed: {
+    victoryTextByLevel() {
+      return `Victory! ${victorySentences[levelByMoves(this.turn)]}`;
     }
   }
 };
