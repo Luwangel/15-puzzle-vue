@@ -1,5 +1,5 @@
 <template>
-  <div class="puzzle-tile" :style="[backgroundStyle, dimensionStyle]">
+  <div :class="classes" :style="[backgroundStyle, dimensionStyle]">
     <span v-if="showNumber" class="puzzle-tile-number">{{number}}</span>
   </div>
 </template>
@@ -11,14 +11,22 @@ export default {
     number: Number,
     showNumber: Boolean,
     backgroundStyle: Object,
-    dimensionStyle: Object
+    dimensionStyle: Object,
+    clickable: Boolean
+  },
+  computed: {
+    classes() {
+      return {
+        "puzzle-tile": true,
+        "puzzle-tile-clickable": this.clickable
+      };
+    }
   }
 };
 </script>
 
 <style scoped>
 .puzzle-tile {
-  cursor: pointer;
   user-select: none;
   align-items: center;
   display: flex;
@@ -27,7 +35,11 @@ export default {
   border-radius: 4px;
 }
 
-.puzzle-tile:hover {
+.puzzle-tile-clickable {
+  cursor: pointer;
+}
+
+.puzzle-tile-clickable:hover {
   filter: brightness(90%);
 }
 

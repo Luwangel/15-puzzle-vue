@@ -4,12 +4,21 @@
       <span class="flex" v-for="tile in row" :key="tile">
         <TileEmpty v-if="tile === 0" :dimensionStyle="myGame.dimensionStyle"/>
         <Tile
+          v-else-if="isMovableTile(tile)"
+          :number="tile"
+          :showNumber="showNumbers"
+          :backgroundStyle="buildBackground(tile)"
+          :dimensionStyle="myGame.dimensionStyle"
+          :clickable="true"
+          @click.prevent.native="moveTile(tile)"
+        />
+        <Tile
           v-else
           :number="tile"
           :showNumber="showNumbers"
-          @click.prevent.native="moveTile(tile)"
           :backgroundStyle="buildBackground(tile)"
           :dimensionStyle="myGame.dimensionStyle"
+          :clickable="false"
         />
       </span>
     </span>
@@ -22,6 +31,7 @@ import Tile from "./Tile.vue";
 import TileEmpty from "./TileEmpty.vue";
 
 import { buildResponsiveBackground } from "../../../../core/src/picture";
+import { isTileInMovableTiles } from "../../../../core/src/game";
 
 export default {
   name: "Grid",
@@ -46,6 +56,9 @@ export default {
         this.myGame.imageCoords[tile],
         this.myGame.tileSize
       );
+    },
+    isMovableTile(tile) {
+      return isTileInMovableTiles(this.myGame.currentGrid, tile);
     }
   }
 };
