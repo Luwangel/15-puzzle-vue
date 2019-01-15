@@ -38,7 +38,7 @@ header > div {
 }
 
 .logo > img {
-  margin-right: 6px;
+  margin: 0 10px;
   width: 40px;
   height: 40px;
 }

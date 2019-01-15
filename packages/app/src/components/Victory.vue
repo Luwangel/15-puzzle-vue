@@ -33,6 +33,6 @@ export default {
 
 <style scoped>
 .victory {
-  color: rgb(64, 202, 59);
+  color: #42b983;
 }
 </style>

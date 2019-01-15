@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="#app">
     <Menu/>
     <Content/>
   </div>
@@ -10,7 +10,7 @@ import Menu from "./layout/Menu.vue";
 import Content from "./layout/Content.vue";
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     Menu,
     Content
@@ -19,12 +19,20 @@ export default {
 </script>
 
 <style>
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+  min-height: 100%;
+
+  background-color: #fff;
+  color: #2c3e52;
 }
 </style>
 
