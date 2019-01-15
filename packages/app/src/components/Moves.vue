@@ -40,18 +40,18 @@ export default {
 }
 
 .moves-bad {
-  color: red;
+  color: #d40101;
 }
 
 .moves-normal {
-  color: rgb(209, 176, 68);
+  color: #ff9120;
 }
 
 .moves-good {
-  color: rgb(64, 202, 59);
+  color: #42b983;
 }
 
 .moves-perfect {
-  color: rgb(64, 202, 59);
+  color: #40ca3b;
 }
 </style>
