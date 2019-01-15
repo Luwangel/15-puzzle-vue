@@ -8,7 +8,7 @@
       <Moves v-show="turn" :turn="turn"/>
       <Victory v-show="isVictory" :turn="turn"/>
       <Options/>
-      <button @click="restart()">Restart Game</button>
+      <button @click="restart()" @keyup.enter="restart()">Restart Game</button>
     </div>
   </div>
 </template>
