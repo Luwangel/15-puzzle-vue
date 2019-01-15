@@ -16,7 +16,7 @@
 <script>
 import { mapState, mapActions } from "vuex";
 
-import Button from "./Button.vue";
+import Button from "./ui/Button.vue";
 
 import Loading from "./Loading.vue";
 import Grid from "./puzzle/Grid.vue";
