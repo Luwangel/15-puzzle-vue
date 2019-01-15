@@ -61,21 +61,18 @@ export default {
 
 button {
   border-radius: 6px;
-  background-color: #42b983;
-  color: #35495e;
-  padding: 10px;
+  border: 1px solid;
+  border-color: #42b983;
+  background-color: #fff;
+  color: #42b983;
+  transition: all 0.15s ease;
+  padding: 0.75em 2em;
   outline: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #76e4b2;
-  outline: none;
-}
-
-button:active {
-  background-color: #1c7950;
-  color: #42b983;
-  outline: none;
+  color: #1c7950;
+  border-color: #1c7950;
 }
 </style>
