@@ -8,13 +8,15 @@
       <Moves v-show="turn" :turn="turn"/>
       <Victory v-show="isVictory" :turn="turn"/>
       <Options/>
-      <button @click="restart()" @keyup.enter="restart()">Restart Game</button>
+      <Button @click="restart()">Restart Game</Button>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
+
+import Button from "./Button.vue";
 
 import Loading from "./Loading.vue";
 import Grid from "./puzzle/Grid.vue";
@@ -25,6 +27,7 @@ import Options from "./Options.vue";
 export default {
   name: "Game",
   components: {
+    Button,
     Loading,
     Grid,
     Victory,
@@ -55,22 +58,5 @@ export default {
   display: flex;
   flex-direction: column;
   margin: auto;
-}
-
-button {
-  border-radius: 6px;
-  border: 1px solid;
-  border-color: #42b983;
-  background-color: #fff;
-  color: #42b983;
-  transition: all 0.15s ease;
-  padding: 0.75em 2em;
-  outline: none;
-  cursor: pointer;
-}
-
-button:hover {
-  color: #1c7950;
-  border-color: #1c7950;
 }
 </style>
