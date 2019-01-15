@@ -5,11 +5,9 @@
     </div>
     <div v-else-if="myGame">
       <Grid/>
-      <Moves v-if="turn" :turn="turn"/>
-      <Victory v-if="isVictory" :turn="turn"/>
+      <Moves v-show="turn" :turn="turn"/>
+      <Victory v-show="isVictory" :turn="turn"/>
       <Options/>
-    </div>
-    <div>
       <button @click="restart()">Restart Game</button>
     </div>
   </div>
