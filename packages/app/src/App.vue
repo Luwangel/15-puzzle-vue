@@ -10,7 +10,7 @@ import Menu from "./layout/Menu.vue";
 import Content from "./layout/Content.vue";
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     Menu,
     Content

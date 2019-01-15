@@ -9,7 +9,7 @@
 import Game from "../components/Game.vue";
 
 export default {
-  name: "MyContent",
+  name: "Content",
   components: {
     Game
   }
