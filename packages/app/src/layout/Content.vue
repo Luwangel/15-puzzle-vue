@@ -1,7 +1,7 @@
 
 <template>
   <div id="content">
-    <Game msg="15 Puzzle Game"/>
+    <Game/>
   </div>
 </template>
 
@@ -18,13 +18,13 @@ export default {
 
 <style scoped>
 #content {
-  margin-top: 60px;
-}
-</style>
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
 
-
-<style>
-body {
-  color: #35495e;
+  height: 100%;
+  margin-top: 80px;
 }
 </style>
