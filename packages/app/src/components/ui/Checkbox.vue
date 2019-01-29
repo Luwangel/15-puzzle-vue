@@ -26,7 +26,6 @@ export default {
   position: relative;
   height: 23px;
   padding-left: 30px;
-  margin-bottom: 12px;
   cursor: pointer;
   user-select: none;
   transition: all 0.15s ease;
