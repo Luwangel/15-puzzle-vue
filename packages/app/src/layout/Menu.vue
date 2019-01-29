@@ -5,13 +5,13 @@
       <span>{{title}}</span>
     </div>
     <div class="menu">
-      <Button class="menu-button" @click="restart()">Restart Game</Button>
+      <Button class="menu-button" @click="restart()" :disabled="loading">Restart Game</Button>
     </div>
   </header>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 import Button from "../components/ui/Button";
 
@@ -22,6 +22,11 @@ export default {
   },
   components: {
     Button
+  },
+  computed: {
+    ...mapState({
+      loading: state => state.games.loading
+    })
   },
   methods: {
     ...mapActions({
