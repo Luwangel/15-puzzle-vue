@@ -24,8 +24,8 @@ export default {
   flex-direction: row;
 
   position: relative;
-  height: 27px;
-  padding-left: 35px;
+  height: 23px;
+  padding-left: 30px;
   margin-bottom: 12px;
   cursor: pointer;
   user-select: none;
@@ -44,8 +44,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 21px;
+  width: 21px;
   border-radius: 6px;
   border: 1px solid;
   border-color: #42b983;
@@ -78,14 +78,12 @@ export default {
 }
 
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 7px;
+  top: 2px;
   width: 5px;
   height: 10px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 </style>
