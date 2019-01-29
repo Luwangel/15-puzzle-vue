@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style scoped>
+span {
+  font-size: 1.1rem;
+}
+
 .start {
   color: inherit;
 }
