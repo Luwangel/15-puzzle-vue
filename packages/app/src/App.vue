@@ -33,6 +33,8 @@ body {
 
   background-color: #fff;
   color: #2c3e52;
+
+  font-size: 1rem;
 }
 </style>
 
