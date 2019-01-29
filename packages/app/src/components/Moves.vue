@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="classes">{{ label }}</h1>
+  <span :class="classes">{{ label }}</span>
 </template>
 
 <script>
@@ -23,11 +23,11 @@ export default {
     classes() {
       const level = levelByMoves(this.turn);
       return {
-        "moves-start": level === NOT_RANKED,
-        "moves-bad": level === NOT_RANKED,
-        "moves-normal": level === BRONZE,
-        "moves-good": level === SILVER,
-        "moves-perfect": level === GOLD
+        start: level === NOT_RANKED,
+        bad: level === NOT_RANKED,
+        normal: level === BRONZE,
+        good: level === SILVER,
+        perfect: level === GOLD
       };
     }
   }
@@ -35,23 +35,23 @@ export default {
 </script>
 
 <style scoped>
-.moves-start {
+.start {
   color: inherit;
 }
 
-.moves-bad {
+.bad {
   color: #d40101;
 }
 
-.moves-normal {
+.normal {
   color: #ff9120;
 }
 
-.moves-good {
+.good {
   color: #42b983;
 }
 
-.moves-perfect {
+.perfect {
   color: #40ca3b;
 }
 </style>
