@@ -1,6 +1,6 @@
 <template>
   <div class="puzzle-grid" v-if="myGame">
-    <span class="flex" v-for="(row, rowIndex) in myGame.currentGrid" :key="rowIndex">
+    <span class="flex" v-for="(row, rowIndex) in currentGrid" :key="rowIndex">
       <span class="flex" v-for="tile in row" :key="tile">
         <TileEmpty v-if="tile === 0" :dimensionStyle="myGame.dimensionStyle"/>
         <Tile
@@ -42,6 +42,9 @@ export default {
   computed: {
     ...mapState({
       myGame: state => state.games.myGame,
+      currentGrid: state =>
+        state.games.myGame && state.games.myGame.currentGrid,
+      isVictory: state => state.games.myGame && state.games.myGame.isVictory,
       showNumbers: state => state.games.showNumbers
     })
   },
@@ -58,7 +61,7 @@ export default {
       );
     },
     isMovableTile(tile) {
-      return isTileInMovableTiles(this.myGame.currentGrid, tile);
+      return !this.isVictory && isTileInMovableTiles(this.currentGrid, tile);
     }
   }
 };
