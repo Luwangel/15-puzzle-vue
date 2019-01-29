@@ -18,7 +18,14 @@ export default {
   },
   computed: {
     label() {
-      return `${this.turn} move${this.turn > 1 ? "s" : ""}`;
+      switch (this.turn) {
+        case 0:
+          return "Start the game by clicking on a tile";
+        case 1:
+          return `${this.turn} move`;
+        default:
+          return `${this.turn} moves`;
+      }
     },
     classes() {
       const level = levelByMoves(this.turn);

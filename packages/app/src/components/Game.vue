@@ -4,18 +4,15 @@
       <Loading/>
     </div>
     <div v-else-if="myGame">
-      <div class="section">
+      <div class="section game">
         <Grid/>
       </div>
-      <div class="section" v-if="turn > 0">
-        <Moves v-show="turn" :turn="turn"/>
-        <Victory v-show="isVictory" :turn="turn"/>
-      </div>
-      <div class="section" v-else>
-        <span>Start the game by clicking on a tile</span>
-      </div>
-      <div class="section">
+      <div class="section options">
         <Options/>
+      </div>
+      <div class="section infos">
+        <Moves :turn="turn"/>
+        <Victory v-show="isVictory" :turn="turn"/>
       </div>
     </div>
   </div>
@@ -67,5 +64,12 @@ export default {
 
 .section {
   margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+  justify-content: flex-end;
 }
 </style>
