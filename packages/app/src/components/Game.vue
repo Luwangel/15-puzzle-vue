@@ -4,19 +4,25 @@
       <Loading/>
     </div>
     <div v-else-if="myGame">
-      <Grid/>
-      <Moves v-show="turn" :turn="turn"/>
-      <Victory v-show="isVictory" :turn="turn"/>
-      <Options/>
-      <Button @click="restart()">Restart Game</Button>
+      <div class="section">
+        <Grid/>
+      </div>
+      <div class="section" v-if="turn > 0">
+        <Moves v-show="turn" :turn="turn"/>
+        <Victory v-show="isVictory" :turn="turn"/>
+      </div>
+      <div class="section" v-else>
+        <span>Start the game by clicking on a tile</span>
+      </div>
+      <div class="section">
+        <Options/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-
-import Button from "./ui/Button.vue";
 
 import Loading from "./Loading.vue";
 import Grid from "./puzzle/Grid.vue";
@@ -27,7 +33,6 @@ import Options from "./Options.vue";
 export default {
   name: "Game",
   components: {
-    Button,
     Loading,
     Grid,
     Victory,
@@ -58,5 +63,9 @@ export default {
   display: flex;
   flex-direction: column;
   margin: auto;
+}
+
+.section {
+  margin: 10px;
 }
 </style>
