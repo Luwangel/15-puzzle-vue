@@ -1,5 +1,7 @@
 <template>
-  <span :class="classes">{{ label }}</span>
+  <div>
+    <span :class="classes">{{ label }}</span>
+  </div>
 </template>
 
 <script>
@@ -42,6 +44,10 @@ export default {
 </script>
 
 <style scoped>
+div {
+  padding: 10px 0;
+}
+
 span {
   font-size: 1.1rem;
 }

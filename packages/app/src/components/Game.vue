@@ -72,4 +72,8 @@ export default {
 .options {
   justify-content: flex-end;
 }
+
+.infos {
+  flex-direction: column;
+}
 </style>
