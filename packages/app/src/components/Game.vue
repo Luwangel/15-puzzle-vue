@@ -4,11 +4,16 @@
       <Loading/>
     </div>
     <div v-else-if="myGame">
-      <Grid/>
-      <Moves v-show="turn" :turn="turn"/>
-      <Victory v-show="isVictory" :turn="turn"/>
-      <Options/>
-      <button @click="restart()" @keyup.enter="restart()">Restart Game</button>
+      <div class="section game">
+        <Grid/>
+      </div>
+      <div class="section options">
+        <Options/>
+      </div>
+      <div class="section infos">
+        <Moves :turn="turn"/>
+        <Victory v-show="isVictory" :turn="turn"/>
+      </div>
     </div>
   </div>
 </template>
@@ -57,20 +62,18 @@ export default {
   margin: auto;
 }
 
-button {
-  border-radius: 6px;
-  border: 1px solid;
-  border-color: #42b983;
-  background-color: #fff;
-  color: #42b983;
-  transition: all 0.15s ease;
-  padding: 0.75em 2em;
-  outline: none;
-  cursor: pointer;
+.section {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button:hover {
-  color: #1c7950;
-  border-color: #1c7950;
+.options {
+  justify-content: flex-end;
+}
+
+.infos {
+  flex-direction: column;
 }
 </style>

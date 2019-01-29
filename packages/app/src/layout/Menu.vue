@@ -4,14 +4,34 @@
       <img alt="Vue logo" src="../assets/logo.png">
       <span>{{title}}</span>
     </div>
+    <div class="menu">
+      <Button class="menu-button" @click="restart()" :disabled="loading">Restart Game</Button>
+    </div>
   </header>
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
+
+import Button from "../components/ui/Button";
+
 export default {
   name: "MyMenu",
   props: {
     title: { type: String, default: "Play the 15 Puzzle Game" }
+  },
+  components: {
+    Button
+  },
+  computed: {
+    ...mapState({
+      loading: state => state.games.loading
+    })
+  },
+  methods: {
+    ...mapActions({
+      restart: "games/buildInitialGame"
+    })
   }
 };
 </script>
@@ -20,6 +40,9 @@ export default {
 header {
   background-color: #fff;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   height: 50px;
@@ -29,6 +52,10 @@ header {
 
 header > div {
   padding: 5px 60px;
+}
+
+.menu-button {
+  padding: 0.5em 2em;
 }
 
 .logo {

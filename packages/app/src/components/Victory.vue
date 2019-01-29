@@ -1,5 +1,7 @@
 <template>
-  <h1 class="victory">{{ victoryTextByLevel }}</h1>
+  <div>
+    <span class="victory">{{ victoryTextByLevel }}</span>
+  </div>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ import {
 const victorySentences = {
   [GOLD]: "Congrats, you are now the 15 Puzzle master!",
   [SILVER]: "You are a champion!",
-  [BRONZE]: "Bravo, You played well.",
+  [BRONZE]: "Bravo, you played well.",
   [NOT_RANKED]: "You finally finished"
 };
 
@@ -32,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+div {
+  padding: 10px 0;
+}
+
 .victory {
   color: #42b983;
 }

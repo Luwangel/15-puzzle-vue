@@ -1,5 +1,7 @@
 <template>
-  <h1 :class="classes">{{ label }}</h1>
+  <div>
+    <span :class="classes">{{ label }}</span>
+  </div>
 </template>
 
 <script>
@@ -18,16 +20,23 @@ export default {
   },
   computed: {
     label() {
-      return `${this.turn} move${this.turn > 1 ? "s" : ""}`;
+      switch (this.turn) {
+        case 0:
+          return "Start the game by clicking on a tile";
+        case 1:
+          return `${this.turn} move`;
+        default:
+          return `${this.turn} moves`;
+      }
     },
     classes() {
       const level = levelByMoves(this.turn);
       return {
-        "moves-start": level === NOT_RANKED,
-        "moves-bad": level === NOT_RANKED,
-        "moves-normal": level === BRONZE,
-        "moves-good": level === SILVER,
-        "moves-perfect": level === GOLD
+        start: level === NOT_RANKED,
+        bad: level === NOT_RANKED,
+        normal: level === BRONZE,
+        good: level === SILVER,
+        perfect: level === GOLD
       };
     }
   }
@@ -35,23 +44,31 @@ export default {
 </script>
 
 <style scoped>
-.moves-start {
+div {
+  padding: 10px 0;
+}
+
+span {
+  font-size: 1.1rem;
+}
+
+.start {
   color: inherit;
 }
 
-.moves-bad {
+.bad {
   color: #d40101;
 }
 
-.moves-normal {
+.normal {
   color: #ff9120;
 }
 
-.moves-good {
+.good {
   color: #42b983;
 }
 
-.moves-perfect {
+.perfect {
   color: #40ca3b;
 }
 </style>
