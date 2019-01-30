@@ -8,5 +8,12 @@
     "private": true,
     "workspaces": [
         "packages/*"
-    ]
+    ],
+    "devDependencies": {
+        "gh-pages": "1.1.0"
+    },
+    "scripts": {
+        "predeploy": "make build",
+        "deploy": "gh-pages -d packages/app/dist"
+    }
 }
