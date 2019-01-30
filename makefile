@@ -11,3 +11,7 @@ run: ## Run the website for development purpose. Usage: "make run".
 build: ## Build the website for production. Usage "make build".
 	cd packages/app && \
 		yarn run build
+
+test: ## Run tests. Usage "make test"
+	cd packages/core && \
+		yarn run test
