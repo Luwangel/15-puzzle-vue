@@ -1,6 +1,6 @@
 # 15-puzzle-vue
 
-Play the 15 Puzzle
+Play the 15 Puzzle everywhere
 
 **Tip:** Type `make help` to see all the  available commands.
 
