@@ -12,10 +12,13 @@ branches:
         - master
 script:
     - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make test; fi'
+before-deploy:
+    - make build
 deploy:
-    provider: script
+    provider: pages
     skip_cleanup: true
     github-token: $GITHUB_TOKEN
-    script: make deploy
+    local-dir: packages/app/dist
+    keep-history: true
     on:
         branch: master
