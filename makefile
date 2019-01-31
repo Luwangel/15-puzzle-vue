@@ -12,6 +12,9 @@ build: ## Build the website for production. Usage "make build".
 	cd packages/app && \
 		yarn run build
 
+deploy: build ## Deploy the website on gh-pages. Usage "make deploy".
+	yarn run deploy
+
 test: ## Run tests. Usage "make test"
 	cd packages/core && \
 		yarn run test
