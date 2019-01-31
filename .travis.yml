@@ -8,7 +8,7 @@ cache:
 install:
     - make install
 script:
-    - 'if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then make test; fi'
+    - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make test; fi'
     - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make deploy; fi'
 branches:
     only:
