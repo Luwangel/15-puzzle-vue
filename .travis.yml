@@ -12,7 +12,7 @@ branches:
         - master
 script:
     - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make test; fi'
-before-deploy:
+before_deploy:
     - make build
 deploy:
     provider: pages
