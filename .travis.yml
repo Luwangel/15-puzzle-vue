@@ -7,9 +7,18 @@ cache:
         - ~/.cache
 install:
     - make install
-script:
-    - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make test; fi'
-    - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make deploy; fi'
 branches:
     only:
         - master
+script:
+    - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make test; fi'
+before-deploy:
+    - make build
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github-token: $GITHUB_TOKEN
+    local-dir: packages/app/dist
+    keep-history: true
+    on:
+        branch: master
