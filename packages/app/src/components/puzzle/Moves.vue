@@ -11,7 +11,7 @@ import {
   BRONZE,
   NOT_RANKED,
   levelByMoves
-} from "../../../core/src/levels";
+} from "../../../../core/src/levels";
 
 export default {
   name: "Moves",

@@ -7,7 +7,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 
-import Checkbox from "./ui/Checkbox.vue";
+import Checkbox from "../ui/Checkbox.vue";
 
 export default {
   name: "Options",

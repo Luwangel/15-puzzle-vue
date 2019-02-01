@@ -21,8 +21,8 @@
 <script>
 import { mapState, mapActions } from "vuex";
 
-import Loading from "./Loading.vue";
-import Grid from "./puzzle/Grid.vue";
+import Loading from "../Loading.vue";
+import Grid from "./Grid.vue";
 import Victory from "./Victory.vue";
 import Moves from "./Moves.vue";
 import Options from "./Options.vue";
@@ -59,11 +59,10 @@ export default {
 .board {
   display: flex;
   flex-direction: column;
-  margin: auto;
 }
 
 .section {
-  margin: 10px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
