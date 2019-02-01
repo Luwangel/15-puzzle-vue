@@ -1,11 +1,13 @@
 <template>
   <header>
-    <div class="logo">
-      <img alt="Vue logo" src="../assets/logo.png">
-      <span>{{title}}</span>
-    </div>
-    <div class="menu">
-      <Button class="menu-button" @click="restart()" :disabled="loading">Restart Game</Button>
+    <div class="container">
+      <div class="logo">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <span>{{title}}</span>
+      </div>
+      <div class="menu">
+        <Button class="menu-button" @click="restart()" :disabled="loading">Restart Game</Button>
+      </div>
     </div>
   </header>
 </template>
@@ -39,23 +41,36 @@ export default {
 <style scoped>
 header {
   background-color: #fff;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
   position: fixed;
   top: 0;
+  display: flex;
+  align-items: center;
   height: 50px;
+  min-height: 50px;
   width: calc(100%);
+  min-width: calc(400px);
   z-index: 100;
 }
 
-header > div {
-  padding: 5px 60px;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5px;
+  height: 100%;
+  width: calc(100%);
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    padding: 5px 5%;
+  }
 }
 
 .menu-button {
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
 }
 
 .logo {
@@ -66,13 +81,13 @@ header > div {
 
 .logo > img {
   margin: 0 10px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .logo > span {
-  font-size: 1.5em;
-  line-height: 40px;
+  font-size: 1em;
+  line-height: 1em;
   color: #2c3e50;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
