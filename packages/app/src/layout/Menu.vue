@@ -6,7 +6,7 @@
         <span>{{title}}</span>
       </div>
       <div class="menu">
-        <Button class="menu-button" @click="restart()" :disabled="loading">Restart Game</Button>
+        <Button class="menu-button" @click="restart()" :disabled="loading">{{restartButtonText}}</Button>
       </div>
     </div>
   </header>
@@ -28,7 +28,13 @@ export default {
   computed: {
     ...mapState({
       loading: state => state.games.loading
-    })
+    }),
+    restartButtonText() {
+      if (this.loading) {
+        return "Loading...";
+      }
+      return "Restart Game";
+    }
   },
   methods: {
     ...mapActions({
