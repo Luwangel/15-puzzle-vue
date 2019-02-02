@@ -31,7 +31,7 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-image: url("../../assets/panda.jpg");
+  background-image: url("../../assets/images/puzzle/panda.jpg");
   border-radius: 4px;
 }
 

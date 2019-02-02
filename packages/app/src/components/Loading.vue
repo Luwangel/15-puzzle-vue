@@ -6,7 +6,7 @@ export default {
 
 <template>
   <div>
-    <img class="loading" alt="Loading..." src="../assets/loading.gif">
+    <img class="loading" alt="Loading..." src="../assets/images/loading.gif">
   </div>
 </template>
 

@@ -34,7 +34,7 @@ export default {
   <header>
     <div class="container">
       <div class="logo">
-        <img alt="Vue logo" src="../assets/logo.png">
+        <img alt="Vue logo" src="../assets/images/logo.png">
         <span>{{title}}</span>
       </div>
       <div class="menu">
