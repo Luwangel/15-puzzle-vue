@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <span class="victory">{{ victoryTextByLevel }}</span>
-  </div>
-</template>
-
 <script>
 import {
   GOLD,
@@ -11,7 +5,7 @@ import {
   BRONZE,
   NOT_RANKED,
   levelByMoves
-} from "../../../core/src/levels";
+} from "../../../../core/src/levels";
 
 const victorySentences = {
   [GOLD]: "Congrats, you are now the 15 Puzzle master!",
@@ -32,6 +26,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div>
+    <span class="victory">{{ victoryTextByLevel }}</span>
+  </div>
+</template>
 
 <style scoped>
 div {

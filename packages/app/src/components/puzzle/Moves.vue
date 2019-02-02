@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <span :class="classes">{{ label }}</span>
-  </div>
-</template>
-
 <script>
 import {
   GOLD,
@@ -11,7 +5,7 @@ import {
   BRONZE,
   NOT_RANKED,
   levelByMoves
-} from "../../../core/src/levels";
+} from "../../../../core/src/levels";
 
 export default {
   name: "Moves",
@@ -42,6 +36,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div>
+    <span :class="classes">{{ label }}</span>
+  </div>
+</template>
 
 <style scoped>
 div {

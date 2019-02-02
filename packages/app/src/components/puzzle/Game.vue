@@ -1,28 +1,8 @@
-<template>
-  <div class="board">
-    <div v-if="loading">
-      <Loading/>
-    </div>
-    <div v-else-if="myGame">
-      <div class="section game">
-        <Grid/>
-      </div>
-      <div class="section options">
-        <Options/>
-      </div>
-      <div class="section infos">
-        <Moves :turn="turn"/>
-        <Victory v-show="isVictory" :turn="turn"/>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import { mapState, mapActions } from "vuex";
 
-import Loading from "./Loading.vue";
-import Grid from "./puzzle/Grid.vue";
+import Loading from "../Loading.vue";
+import Grid from "./Grid.vue";
 import Victory from "./Victory.vue";
 import Moves from "./Moves.vue";
 import Options from "./Options.vue";
@@ -55,15 +35,34 @@ export default {
 };
 </script>
 
+<template>
+  <div class="board">
+    <div v-if="loading">
+      <Loading/>
+    </div>
+    <div v-else-if="myGame">
+      <div class="section game">
+        <Grid/>
+      </div>
+      <div class="section options">
+        <Options/>
+      </div>
+      <div class="section infos">
+        <Moves :turn="turn"/>
+        <Victory v-show="isVictory" :turn="turn"/>
+      </div>
+    </div>
+  </div>
+</template>
+
 <style scoped>
 .board {
   display: flex;
   flex-direction: column;
-  margin: auto;
 }
 
 .section {
-  margin: 10px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,13 +1,7 @@
-<template>
-  <div>
-    <Checkbox @change="setShowNumbers" :checked="showNumbers" label="Show numbers"/>
-  </div>
-</template>
-
 <script>
 import { mapActions, mapState } from "vuex";
 
-import Checkbox from "./ui/Checkbox.vue";
+import Checkbox from "../ui/Checkbox.vue";
 
 export default {
   name: "Options",
@@ -16,16 +10,22 @@ export default {
   },
   computed: {
     ...mapState({
-      showNumbers: state => state.games.myGame.showNumbers
+      showNumbers: state => state.settings.showNumbers
     })
   },
   methods: {
     ...mapActions({
-      setShowNumbers: "games/setShowNumbers"
+      setShowNumbers: "settings/setShowNumbers"
     })
   }
 };
 </script>
+
+<template>
+  <div>
+    <Checkbox @change="setShowNumbers" :checked="showNumbers" label="Show numbers"/>
+  </div>
+</template>
 
 <style scoped>
 input {

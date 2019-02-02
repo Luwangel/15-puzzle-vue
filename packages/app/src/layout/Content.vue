@@ -1,12 +1,5 @@
-
-<template>
-  <div id="content">
-    <Game/>
-  </div>
-</template>
-
 <script>
-import Game from "../components/Game.vue";
+import Game from "../components/puzzle/Game.vue";
 
 export default {
   name: "Content",
@@ -15,6 +8,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <main id="content">
+    <Game/>
+  </main>
+</template>
 
 <style scoped>
 #content {
@@ -25,6 +24,14 @@ export default {
   align-content: center;
 
   height: 100%;
+  min-height: 100%;
   margin-top: 80px;
+  padding: 5px;
+}
+
+@media screen and (min-width: 600px) {
+  #content {
+    padding: 5px 5%;
+  }
 }
 </style>

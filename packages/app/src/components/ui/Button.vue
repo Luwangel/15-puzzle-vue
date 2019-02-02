@@ -1,9 +1,3 @@
-<template>
-  <button @click="handleClick()" @keyup.enter="handleClick()" :class="{ disabled: disabled }">
-    <slot></slot>
-  </button>
-</template>
-
 <script>
 export default {
   name: "Button",
@@ -21,6 +15,12 @@ export default {
 };
 </script>
 
+<template>
+  <button @click="handleClick()" @keyup.enter="handleClick()" :class="{ disabled: disabled }">
+    <slot></slot>
+  </button>
+</template>
+
 <style scoped>
 button {
   cursor: pointer;
@@ -30,7 +30,7 @@ button {
   border-radius: 6px;
   border-color: #42b983;
   transition: all 0.15s ease;
-  padding: 0.75em 2em;
+  padding: 0.5em 1em;
   outline: none;
 }
 

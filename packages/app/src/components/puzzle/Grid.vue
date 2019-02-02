@@ -1,3 +1,45 @@
+<script>
+import { mapState, mapActions } from "vuex";
+import Tile from "./Tile.vue";
+import TileEmpty from "./TileEmpty.vue";
+
+import { buildResponsiveBackground } from "../../../../core/src/picture";
+import { isTileInMovableTiles } from "../../../../core/src/game";
+
+export default {
+  name: "Grid",
+  components: {
+    Tile,
+    TileEmpty
+  },
+  computed: {
+    ...mapState({
+      myGame: state => state.games.myGame,
+      currentGrid: state =>
+        state.games.myGame && state.games.myGame.currentGrid,
+      isVictory: state => state.games.myGame && state.games.myGame.isVictory,
+      showNumbers: state => state.settings.showNumbers
+    })
+  },
+  methods: {
+    ...mapActions({
+      moveTile: "games/moveTile"
+    }),
+    buildBackground(tile) {
+      return buildResponsiveBackground(
+        true,
+        this.myGame.size,
+        this.myGame.imageCoords[tile],
+        this.myGame.tileSize
+      );
+    },
+    isMovableTile(tile) {
+      return !this.isVictory && isTileInMovableTiles(this.currentGrid, tile);
+    }
+  }
+};
+</script>
+
 <template>
   <div class="puzzle-grid" v-if="myGame">
     <span class="flex" v-for="(row, rowIndex) in currentGrid" :key="rowIndex">
@@ -24,48 +66,6 @@
     </span>
   </div>
 </template>
-
-<script>
-import { mapState, mapActions } from "vuex";
-import Tile from "./Tile.vue";
-import TileEmpty from "./TileEmpty.vue";
-
-import { buildResponsiveBackground } from "../../../../core/src/picture";
-import { isTileInMovableTiles } from "../../../../core/src/game";
-
-export default {
-  name: "Grid",
-  components: {
-    Tile,
-    TileEmpty
-  },
-  computed: {
-    ...mapState({
-      myGame: state => state.games.myGame,
-      currentGrid: state =>
-        state.games.myGame && state.games.myGame.currentGrid,
-      isVictory: state => state.games.myGame && state.games.myGame.isVictory,
-      showNumbers: state => state.games.showNumbers
-    })
-  },
-  methods: {
-    ...mapActions({
-      moveTile: "games/moveTile"
-    }),
-    buildBackground(tile) {
-      return buildResponsiveBackground(
-        false,
-        this.myGame.size,
-        this.myGame.imageCoords[tile],
-        this.myGame.tileSize
-      );
-    },
-    isMovableTile(tile) {
-      return !this.isVictory && isTileInMovableTiles(this.currentGrid, tile);
-    }
-  }
-};
-</script>
 
 <style scoped>
 .flex {

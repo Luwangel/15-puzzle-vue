@@ -1,11 +1,3 @@
-<template>
-  <label class="container">
-    <span class="label">{{ label }}</span>
-    <input type="checkbox" :checked="checked" @change="$emit('change', $event.target.value)">
-    <span class="checkmark"></span>
-  </label>
-</template>
-
 <script>
 export default {
   name: "Checkbox",
@@ -15,6 +7,14 @@ export default {
   }
 };
 </script>
+
+<template>
+  <label class="container">
+    <span class="label">{{ label }}</span>
+    <input type="checkbox" :checked="checked" @change="$emit('change', $event.target.value)">
+    <span class="checkmark"></span>
+  </label>
+</template>
 
 <style>
 .container {

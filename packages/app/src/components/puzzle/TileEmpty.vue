@@ -1,7 +1,3 @@
-<template>
-  <div class="puzzle-tile" :style="[dimensionStyle]"></div>
-</template>
-
 <script>
 export default {
   name: "TileEmpty",
@@ -10,6 +6,10 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div class="puzzle-tile" :style="[dimensionStyle]"></div>
+</template>
 
 <style scoped>
 .puzzle-tile {
