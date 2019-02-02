@@ -9,7 +9,6 @@ import { buildResponsiveDimension } from '../../../../core/src/picture';
 const state = {
     myGame: null,
     loading: false,
-    showNumbers: false,
 };
 
 const getters = {};
@@ -42,9 +41,6 @@ const actions = {
         });
         context.commit('setGame', newGame);
     },
-    setShowNumbers(context) {
-        context.commit('setShowNumbers', !context.state.showNumbers);
-    },
 };
 
 const mutations = {
@@ -53,9 +49,6 @@ const mutations = {
     },
     setLoading(state, loading) {
         state.loading = loading;
-    },
-    setShowNumbers(state, showNumbers) {
-        state.showNumbers = showNumbers;
     },
 };
 

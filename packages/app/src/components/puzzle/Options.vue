@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShowNumbers: "games/setShowNumbers"
+      setShowNumbers: "settings/setShowNumbers"
     })
   }
 };
