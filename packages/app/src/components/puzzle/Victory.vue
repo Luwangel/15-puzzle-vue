@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <span class="victory">{{ victoryTextByLevel }}</span>
-  </div>
-</template>
-
 <script>
 import {
   GOLD,
@@ -32,6 +26,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div>
+    <span class="victory">{{ victoryTextByLevel }}</span>
+  </div>
+</template>
 
 <style scoped>
 div {

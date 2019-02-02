@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <Checkbox @change="setShowNumbers" :checked="showNumbers" label="Show numbers"/>
-  </div>
-</template>
-
 <script>
 import { mapActions, mapState } from "vuex";
 
@@ -26,6 +20,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div>
+    <Checkbox @change="setShowNumbers" :checked="showNumbers" label="Show numbers"/>
+  </div>
+</template>
 
 <style scoped>
 input {

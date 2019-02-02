@@ -1,17 +1,3 @@
-<template>
-  <header>
-    <div class="container">
-      <div class="logo">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <span>{{title}}</span>
-      </div>
-      <div class="menu">
-        <Button class="menu-button" @click="restart()" :disabled="loading">{{restartButtonText}}</Button>
-      </div>
-    </div>
-  </header>
-</template>
-
 <script>
 import { mapActions, mapState } from "vuex";
 
@@ -43,6 +29,20 @@ export default {
   }
 };
 </script>
+
+<template>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <span>{{title}}</span>
+      </div>
+      <div class="menu">
+        <Button class="menu-button" @click="restart()" :disabled="loading">{{restartButtonText}}</Button>
+      </div>
+    </div>
+  </header>
+</template>
 
 <style scoped>
 header {

@@ -1,9 +1,3 @@
-<template>
-  <div :class="classes" :style="[backgroundStyle, dimensionStyle]">
-    <span v-if="showNumber" class="puzzle-tile-number">{{number}}</span>
-  </div>
-</template>
-
 <script>
 export default {
   name: "Tile",
@@ -24,6 +18,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div :class="classes" :style="[backgroundStyle, dimensionStyle]">
+    <span v-if="showNumber" class="puzzle-tile-number">{{number}}</span>
+  </div>
+</template>
 
 <style scoped>
 .puzzle-tile {

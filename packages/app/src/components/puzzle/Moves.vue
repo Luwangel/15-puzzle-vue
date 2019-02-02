@@ -1,9 +1,3 @@
-<template>
-  <div>
-    <span :class="classes">{{ label }}</span>
-  </div>
-</template>
-
 <script>
 import {
   GOLD,
@@ -42,6 +36,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div>
+    <span :class="classes">{{ label }}</span>
+  </div>
+</template>
 
 <style scoped>
 div {

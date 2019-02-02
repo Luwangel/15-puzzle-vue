@@ -1,23 +1,3 @@
-<template>
-  <div class="board">
-    <div v-if="loading">
-      <Loading/>
-    </div>
-    <div v-else-if="myGame">
-      <div class="section game">
-        <Grid/>
-      </div>
-      <div class="section options">
-        <Options/>
-      </div>
-      <div class="section infos">
-        <Moves :turn="turn"/>
-        <Victory v-show="isVictory" :turn="turn"/>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import { mapState, mapActions } from "vuex";
 
@@ -54,6 +34,26 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div class="board">
+    <div v-if="loading">
+      <Loading/>
+    </div>
+    <div v-else-if="myGame">
+      <div class="section game">
+        <Grid/>
+      </div>
+      <div class="section options">
+        <Options/>
+      </div>
+      <div class="section infos">
+        <Moves :turn="turn"/>
+        <Victory v-show="isVictory" :turn="turn"/>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .board {

@@ -1,10 +1,3 @@
-<template>
-  <div id="#app">
-    <Menu/>
-    <Content/>
-  </div>
-</template>
-
 <script>
 import Menu from "./layout/Menu.vue";
 import Content from "./layout/Content.vue";
@@ -17,6 +10,13 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div id="#app">
+    <Menu/>
+    <Content/>
+  </div>
+</template>
 
 <style>
 body {

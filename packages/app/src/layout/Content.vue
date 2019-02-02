@@ -1,10 +1,3 @@
-
-<template>
-  <main id="content">
-    <Game/>
-  </main>
-</template>
-
 <script>
 import Game from "../components/puzzle/Game.vue";
 
@@ -15,6 +8,12 @@ export default {
   }
 };
 </script>
+
+<template>
+  <main id="content">
+    <Game/>
+  </main>
+</template>
 
 <style scoped>
 #content {
