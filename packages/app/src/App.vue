@@ -31,4 +31,4 @@ body {
 }
 </style>
 
-<style src="./assets/normalize.css"></style>
+<style src="./assets/styles/normalize.css"></style>
