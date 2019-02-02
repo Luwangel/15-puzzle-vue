@@ -18,7 +18,7 @@ export default {
       currentGrid: state =>
         state.games.myGame && state.games.myGame.currentGrid,
       isVictory: state => state.games.myGame && state.games.myGame.isVictory,
-      showNumbers: state => state.games.showNumbers
+      showNumbers: state => state.settings.showNumbers
     })
   },
   methods: {

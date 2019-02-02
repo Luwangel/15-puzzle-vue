@@ -10,7 +10,7 @@ export default {
   },
   computed: {
     ...mapState({
-      showNumbers: state => state.games.myGame.showNumbers
+      showNumbers: state => state.settings.showNumbers
     })
   },
   methods: {
