@@ -27,7 +27,7 @@ export default {
     }),
     buildBackground(tile) {
       return buildResponsiveBackground(
-        false,
+        true,
         this.myGame.size,
         this.myGame.imageCoords[tile],
         this.myGame.tileSize
