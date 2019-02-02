@@ -6,7 +6,7 @@ export const TILE_MARGIN = 2;
 export const MAX_TILE_SIZE = 100;
 
 export const DEFAULT_IMAGE_SIZE = 500; // 500px
-export const IMAGE_SIZE = 100; // 100vh
+export const IMAGE_SIZE = 60; // 60vh
 
 export const divideBackgroundStyle = (imageSize, nbOfTiles) =>
     imageSize / (nbOfTiles + 1);
@@ -22,9 +22,9 @@ export const buildBackgroundStyle = (
 });
 
 export const buildDimensionStyle = (tileSize = MAX_TILE_SIZE, unit = 'px') => ({
-    height: `calc(${tileSize}${unit})`,
+    height: `${tileSize}${unit}`,
     margin: `${TILE_MARGIN}px`,
-    width: `calc(${tileSize}${unit})`,
+    width: `${tileSize}${unit}`,
 });
 
 export const buildTranslateStyle = (dir, tileSize, unit = 'px') => {
@@ -34,9 +34,7 @@ export const buildTranslateStyle = (dir, tileSize, unit = 'px') => {
     };
     return {
         transition: `transform ${TRANSLATE_DURATION}ms ease-out`,
-        transform: `translate(calc(${translatingDir.x}), calc(${
-            translatingDir.y
-        }))`,
+        transform: `translate(${translatingDir.x}), ${translatingDir.y})`,
     };
 };
 
