@@ -1,5 +1,12 @@
+import panda from '../../assets/images/puzzle/panda.jpg';
+
+const pictures = {
+    panda: `url("${panda}")`,
+};
+
 const state = {
     showNumbers: false,
+    picture: pictures.panda,
 };
 
 const getters = {};

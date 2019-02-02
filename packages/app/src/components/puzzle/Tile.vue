@@ -1,4 +1,6 @@
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Tile",
   props: {
@@ -9,6 +11,9 @@ export default {
     clickable: Boolean
   },
   computed: {
+    ...mapState({
+      image: state => state.settings.picture
+    }),
     classes() {
       return {
         "puzzle-tile": true,
@@ -20,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <div :class="classes" :style="[backgroundStyle, dimensionStyle]">
+  <div :class="classes" :style="[backgroundStyle, dimensionStyle, { backgroundImage: image }]">
     <span v-if="showNumber" class="puzzle-tile-number">{{number}}</span>
   </div>
 </template>
@@ -31,7 +36,7 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-image: url("../../assets/images/puzzle/panda.jpg");
+  background-color: #40ca65;
   border-radius: 4px;
 }
 
