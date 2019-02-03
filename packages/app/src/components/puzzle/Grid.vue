@@ -68,6 +68,11 @@ export default {
 </template>
 
 <style scoped>
+.puzzle-grid {
+  user-select: none;
+  touch-action: manipulation;
+}
+
 .flex {
   align-items: center;
   display: flex;
