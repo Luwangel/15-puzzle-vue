@@ -27,6 +27,9 @@ body {
   background-color: #fff;
   color: #2c3e52;
 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+
   font-size: 1rem;
 }
 </style>
