@@ -2,7 +2,7 @@
 import Game from "../components/puzzle/Game.vue";
 
 export default {
-  name: "Content",
+  name: "MyContent",
   components: {
     Game
   }
@@ -10,28 +10,30 @@ export default {
 </script>
 
 <template>
-  <main id="content">
+  <main>
     <Game/>
   </main>
 </template>
 
 <style scoped>
-#content {
+main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
 
+  padding: 5px;
   height: 100%;
   min-height: 100%;
   margin-top: 80px;
-  padding: 5px;
+  width: calc(100% - 10px);
 }
 
 @media screen and (min-width: 600px) {
-  #content {
-    padding: 5px 5%;
+  main {
+    padding: 5px 15px;
+    width: calc(100% - 30px);
   }
 }
 </style>

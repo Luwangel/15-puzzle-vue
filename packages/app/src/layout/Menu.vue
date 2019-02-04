@@ -52,11 +52,20 @@ header {
   top: 0;
   display: flex;
   align-items: center;
+
+  padding: 5px;
   height: 50px;
   min-height: 50px;
-  width: calc(100%);
-  min-width: calc(400px);
+  width: calc(100% - 10px);
+
   z-index: 100;
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    padding: 5px 15px;
+    width: calc(100% - 30px);
+  }
 }
 
 .container {
@@ -64,15 +73,8 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  padding: 5px;
   height: 100%;
   width: calc(100%);
-}
-
-@media screen and (min-width: 600px) {
-  .container {
-    padding: 5px 5%;
-  }
 }
 
 .menu-button {
