@@ -49,8 +49,8 @@ export default {
 }
 
 .puzzle-tile-number {
-  font-size: 20px;
-  color: #42b983;
+  font-size: 1.5em;
+  color: #fff;
   text-align: center;
 }
 </style>
