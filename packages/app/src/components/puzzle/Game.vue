@@ -37,20 +37,20 @@ export default {
 
 <template>
   <div class="board">
-    <div v-if="loading">
+    <section v-if="loading">
       <Loading/>
-    </div>
+    </section>
     <div v-else-if="myGame">
-      <div class="section game">
+      <section class="game">
         <Grid/>
-      </div>
-      <div class="section options">
+      </section>
+      <section class="options">
         <Options/>
-      </div>
-      <div class="section infos">
+      </section>
+      <section class="infos">
         <Moves :turn="turn"/>
         <Victory v-show="isVictory" :turn="turn"/>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -61,7 +61,7 @@ export default {
   flex-direction: column;
 }
 
-.section {
+section {
   margin: 10px 0;
   display: flex;
   align-items: center;

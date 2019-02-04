@@ -8,6 +8,19 @@ export const MAX_TILE_SIZE = 100;
 export const DEFAULT_IMAGE_SIZE = 500; // 500px
 export const IMAGE_SIZE = 60; // 60vh
 
+export const associateTileToBackground = grid => {
+    const tileSize = grid.length > 0 ? 100 / grid.length : 0; // 100%
+
+    let tileToBg = {};
+
+    grid.forEach((row, rowKey) => {
+        row.forEach((value, colKey) => {
+            tileToBg[value] = `${tileSize * colKey}% ${tileSize * rowKey}%`;
+        });
+    });
+    return tileToBg;
+};
+
 export const divideBackgroundStyle = (imageSize, nbOfTiles) =>
     imageSize / (nbOfTiles + 1);
 
