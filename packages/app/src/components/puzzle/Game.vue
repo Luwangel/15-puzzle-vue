@@ -30,7 +30,9 @@ export default {
     })
   },
   created() {
-    this.restart();
+    if (!this.myGame) {
+      this.restart();
+    }
   }
 };
 </script>
