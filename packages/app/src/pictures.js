@@ -16,6 +16,9 @@ const pictures = {
     cabane: url(cabane),
 };
 
-export const randomPicture = () => choiceInArray(Object.keys(pictures));
+export const getRandomPicture = () => {
+    const choice = choiceInArray(Object.keys(pictures));
+    return pictures[choice];
+};
 
 export default pictures;
