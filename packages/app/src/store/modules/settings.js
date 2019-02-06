@@ -12,12 +12,12 @@ const getters = {};
 
 const actions = {
     setShowNumbers(context) {
-        context.commit('setShowNumbers', !context.state.showNumbers);
+        context.commit('SET_SHOW_NUMBERS', !context.state.showNumbers);
     },
 };
 
 const mutations = {
-    setShowNumbers(state, showNumbers) {
+    SET_SHOW_NUMBERS(state, showNumbers) {
         state.showNumbers = showNumbers;
     },
 };
