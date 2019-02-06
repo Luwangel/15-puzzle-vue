@@ -33,6 +33,9 @@ const actions = {
             newGame.dimensionStyle = dimensionStyle;
             newGame.tileSize = tileSize;
 
+            const newPicture = getRandomPicture();
+
+            context.commit('SET_PICTURE', newPicture);
             context.commit('SET_GAME', newGame);
             context.commit('SET_LOADING', false);
         });
@@ -57,13 +60,7 @@ const mutations = {
     SET_LOADING(state, loading) {
         state.loading = loading;
     },
-    SET_PICTURE(state, pictureName) {
-        const picture = Object.keys(pictures).find(
-            pictureKey => pictureKey === pictureName
-        );
-        if (!picture) {
-            return;
-        }
+    SET_PICTURE(state, picture) {
         state.picture = picture;
     },
 };
