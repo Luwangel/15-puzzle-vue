@@ -12,7 +12,7 @@ const debug = process.env.NODE_ENV !== 'production';
 const persist = new VuexPersist({
     storage: window.localStorage,
     reducer: state => ({
-        games: { myGame: state.games.myGame },
+        games: { myGame: state.games.myGame, picture: state.games.picture },
         settings: { showNumbers: state.settings.showNumbers },
     }),
 });

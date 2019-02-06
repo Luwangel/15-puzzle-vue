@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     ...mapState({
-      image: state => state.settings.picture
+      image: state => state.games.picture
     }),
     classes() {
       return {

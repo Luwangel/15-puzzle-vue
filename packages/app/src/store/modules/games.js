@@ -6,9 +6,12 @@ import {
 } from '../../../../core/src';
 import { buildResponsiveDimension } from '../../../../core/src/picture';
 
+import pictures, { getRandomPicture } from '../../pictures';
+
 const state = {
-    myGame: null,
     loading: false,
+    myGame: null,
+    picture: pictures.panda,
 };
 
 const getters = {};
@@ -41,6 +44,10 @@ const actions = {
         });
         context.commit('SET_GAME', newGame);
     },
+    setRandomPicture(context) {
+        const newPicture = getRandomPicture();
+        context.commit('SET_PICTURE', newPicture);
+    },
 };
 
 const mutations = {
@@ -49,6 +56,15 @@ const mutations = {
     },
     SET_LOADING(state, loading) {
         state.loading = loading;
+    },
+    SET_PICTURE(state, pictureName) {
+        const picture = Object.keys(pictures).find(
+            pictureKey => pictureKey === pictureName
+        );
+        if (!picture) {
+            return;
+        }
+        state.picture = picture;
     },
 };
 
