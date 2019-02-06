@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      restart: "games/buildInitialGame"
+      restart: "games/create"
     })
   },
   created() {

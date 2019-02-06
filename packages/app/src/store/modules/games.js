@@ -14,7 +14,7 @@ const state = {
 const getters = {};
 
 const actions = {
-    buildInitialGame(context) {
+    create(context) {
         context.commit('SET_LOADING', true);
         initGame(DEFAULT_SIZE).then(newGame => {
             newGame.size = DEFAULT_SIZE;
