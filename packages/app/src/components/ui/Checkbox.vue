@@ -45,14 +45,10 @@ export default {
   left: 0;
   height: 21px;
   width: 21px;
+  background-color: #fff;
   border-radius: 6px;
   border: 1px solid;
   border-color: #424fb9;
-}
-
-.container:hover .checkmark {
-  border-color: #424fb9;
-  background-color: #424fb9;
 }
 
 .container input:checked ~ .checkmark {
