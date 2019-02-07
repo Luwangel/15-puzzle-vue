@@ -57,14 +57,4 @@ div {
 .victory {
   font-size: 20px;
 }
-
-.menu-button {
-  color: #424fb9;
-  border-color: #424fb9;
-}
-
-.menu-button:hover {
-  color: #1c4079;
-  border-color: #1c4079;
-}
 </style>

@@ -47,42 +47,37 @@ export default {
   width: 21px;
   border-radius: 6px;
   border: 1px solid;
-  border-color: #42b983;
+  border-color: #424fb9;
 }
 
 .container:hover .checkmark {
-  border-color: #42b983;
-}
-
-.container:hover .label {
-  color: #1c7950;
+  border-color: #424fb9;
+  background-color: #424fb9;
 }
 
 .container input:checked ~ .checkmark {
-  background-color: #42b983;
-}
-
-.container input:checked ~ .label {
-  background-color: #42b983;
+  background-color: #424fb9;
 }
 
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 .container input:checked ~ .checkmark:after {
   display: block;
 }
 
-.container .checkmark:after {
-  left: 7px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+.container:hover .checkmark:after {
+  display: block;
+  color: #424fb9;
 }
 </style>

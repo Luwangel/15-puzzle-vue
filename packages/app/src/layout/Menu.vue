@@ -38,7 +38,7 @@ export default {
         <span>{{title}}</span>
       </div>
       <div class="menu">
-        <Button class="menu-button" @click="restart()" :disabled="loading">{{restartButtonText}}</Button>
+        <Button @click="restart()" :disabled="loading">{{restartButtonText}}</Button>
       </div>
     </div>
   </header>
@@ -75,10 +75,6 @@ header {
 
   height: 100%;
   width: calc(100%);
-}
-
-.menu-button {
-  padding: 0.5em 1em;
 }
 
 .logo {

@@ -24,19 +24,19 @@ export default {
 <style scoped>
 button {
   cursor: pointer;
-  color: #42b983;
+  color: #424fb9;
   background-color: #fff;
   border: 1px solid;
   border-radius: 6px;
-  border-color: #42b983;
+  border-color: #424fb9;
   transition: all 0.15s ease;
   padding: 0.5em 1em;
   outline: none;
 }
 
 button:hover {
-  color: #1c7950;
-  border-color: #1c7950;
+  color: #162473;
+  border-color: #162473;
 }
 
 button.disabled,
