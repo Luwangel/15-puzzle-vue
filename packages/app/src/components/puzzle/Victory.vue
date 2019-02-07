@@ -1,4 +1,6 @@
 <script>
+import { mapActions } from "vuex";
+
 import {
   GOLD,
   SILVER,
@@ -6,6 +8,7 @@ import {
   NOT_RANKED,
   levelByMoves
 } from "../../../../core/src/levels";
+import Button from "../ui/Button";
 
 const victorySentences = {
   [GOLD]: "Congrats, you are now the 15 Puzzle master!",
@@ -19,26 +22,49 @@ export default {
   props: {
     turn: Number
   },
+  components: {
+    Button
+  },
   computed: {
     victoryTextByLevel() {
       return `Victory! ${victorySentences[levelByMoves(this.turn)]}`;
     }
+  },
+  methods: {
+    ...mapActions({
+      create: "games/create"
+    })
   }
 };
 </script>
 
 <template>
   <div>
-    <span class="victory">{{ victoryTextByLevel }}</span>
+    <p class="victory">{{ victoryTextByLevel }}</p>
+    <Button class="menu-button" @click="create()">Improve your Score</Button>
   </div>
 </template>
 
 <style scoped>
 div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 10px 0;
 }
 
 .victory {
-  color: #42b983;
+  font-size: 20px;
+}
+
+.menu-button {
+  color: #424fb9;
+  border-color: #424fb9;
+}
+
+.menu-button:hover {
+  color: #1c4079;
+  border-color: #1c4079;
 }
 </style>

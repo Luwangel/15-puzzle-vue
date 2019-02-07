@@ -6,16 +6,19 @@ import {
 } from '../../../../core/src';
 import { buildResponsiveDimension } from '../../../../core/src/picture';
 
+import pictures, { getRandomPicture } from '../../pictures';
+
 const state = {
-    myGame: null,
     loading: false,
+    myGame: null,
+    picture: pictures.panda,
 };
 
 const getters = {};
 
 const actions = {
-    buildInitialGame(context) {
-        context.commit('setLoading', true);
+    create(context) {
+        context.commit('SET_LOADING', true);
         initGame(DEFAULT_SIZE).then(newGame => {
             newGame.size = DEFAULT_SIZE;
 
@@ -30,8 +33,11 @@ const actions = {
             newGame.dimensionStyle = dimensionStyle;
             newGame.tileSize = tileSize;
 
-            context.commit('setGame', newGame);
-            context.commit('setLoading', false);
+            const newPicture = getRandomPicture();
+
+            context.commit('SET_PICTURE', newPicture);
+            context.commit('SET_GAME', newGame);
+            context.commit('SET_LOADING', false);
         });
     },
     moveTile(context, tile) {
@@ -39,16 +45,23 @@ const actions = {
         const newGame = Object.assign({}, myGame, {
             ...moveTile(myGame, tile),
         });
-        context.commit('setGame', newGame);
+        context.commit('SET_GAME', newGame);
+    },
+    setRandomPicture(context) {
+        const newPicture = getRandomPicture();
+        context.commit('SET_PICTURE', newPicture);
     },
 };
 
 const mutations = {
-    setGame(state, newGame) {
+    SET_GAME(state, newGame) {
         state.myGame = newGame;
     },
-    setLoading(state, loading) {
+    SET_LOADING(state, loading) {
         state.loading = loading;
+    },
+    SET_PICTURE(state, picture) {
+        state.picture = picture;
     },
 };
 
