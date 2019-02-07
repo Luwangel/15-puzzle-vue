@@ -14,5 +14,6 @@ export default {
   min-height: 200px;
   width: 75%;
   min-width: 200px;
+  transform: rotate(-45deg);
 }
 </style>
