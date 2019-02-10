@@ -1,12 +1,14 @@
 <script>
 import Menu from "./layout/Menu.vue";
 import Content from "./layout/Content.vue";
+import Footer from "./layout/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Menu,
-    Content
+    Content,
+    Footer
   }
 };
 </script>
