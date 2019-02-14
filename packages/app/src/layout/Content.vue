@@ -1,17 +1,12 @@
 <script>
-import Game from "../components/puzzle/Game.vue";
-
 export default {
-  name: "MyContent",
-  components: {
-    Game
-  }
+  name: "MyContent"
 };
 </script>
 
 <template>
   <main>
-    <Game/>
+    <slot/>
   </main>
 </template>
 
