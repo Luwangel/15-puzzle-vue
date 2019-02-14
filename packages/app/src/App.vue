@@ -17,6 +17,7 @@ export default {
   <div id="#app">
     <Menu/>
     <Content/>
+    <Footer/>
   </div>
 </template>
 
