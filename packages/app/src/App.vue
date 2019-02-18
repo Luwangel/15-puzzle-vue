@@ -6,6 +6,10 @@ import Footer from "./components/layout/Footer.vue";
 
 import Game from "./components/puzzle/Game.vue";
 
+import Link from "./components/ui/Link";
+import Github from "./components/ui/icons/Github";
+import Twitter from "./components/ui/icons/Twitter";
+
 export default {
   name: "App",
   components: {
@@ -13,11 +17,26 @@ export default {
     Menu,
     Content,
     Footer,
-    Game
+    Game,
+    Link,
+    Github,
+    Twitter
   },
   data() {
     return {
-      title: "Play the 15 Puzzle Game"
+      title: "Play the 15 Puzzle Game",
+      footer: {
+        twitter: {
+          href: "https://twitter.com/luwangel",
+          title: "@Luwangel"
+        },
+        github: {
+          href: "https://github.com/luwangel/15-puzzle-vue",
+          title: "luwangel/15-puzzle-vue"
+        },
+        licence: "Released under the MIT License",
+        copyright: "Copyright ©2019 Luwangel"
+      }
     };
   }
 };
@@ -37,7 +56,20 @@ export default {
     <Content>
       <Game/>
     </Content>
-    <Footer>My Footer</Footer>
+    <Footer class="footer">
+      <template v-slot:links>
+        <Link :href="footer.github.href" :title="footer.github.title">
+          <Github :title="footer.github.title"/>
+        </Link>
+        <Link :href="footer.twitter.href" :title="footer.twitter.title">
+          <Twitter :title="footer.twitter.title"/>
+        </Link>
+      </template>
+      <template v-slot:legal>
+        <span class="footer-text">{{footer.licence}}</span>
+        <span class="footer-text">{{footer.copyright}}</span>
+      </template>
+    </Footer>
   </div>
 </template>
 
@@ -68,6 +100,14 @@ body {
   color: #2c3e50;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+.footer-link {
+  color: #fff;
 }
 </style>
 
