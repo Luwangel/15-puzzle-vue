@@ -1,8 +1,8 @@
 <script>
-import Header from "./layout/Header.vue";
-import Menu from "./layout/Menu.vue";
-import Content from "./layout/Content.vue";
-import Footer from "./layout/Footer.vue";
+import Header from "./components/layout/Header.vue";
+import Menu from "./components/layout/Menu.vue";
+import Content from "./components/layout/Content.vue";
+import Footer from "./components/layout/Footer.vue";
 
 import Game from "./components/puzzle/Game.vue";
 
@@ -15,7 +15,7 @@ export default {
     Footer,
     Game
   },
-  date() {
+  data() {
     return {
       title: "Play the 15 Puzzle Game"
     };
