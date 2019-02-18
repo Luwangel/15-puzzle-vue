@@ -6,7 +6,7 @@
 
     import Game from "./components/puzzle/Game.vue";
 
-    import Link from "./components/ui/Link";
+    import CustomLink from "./components/ui/Link";
     import Github from "./components/ui/icons/Github";
     import Twitter from "./components/ui/icons/Twitter";
 
@@ -58,12 +58,12 @@
         </Content>
         <Footer class="footer">
             <template v-slot:links>
-                <Link :href="footer.github.href" :title="footer.github.title">
+                <CustomLink :href="footer.github.href" :title="footer.github.title">
                     <Github :title="footer.github.title"/>
-                </Link>
-                <Link :href="footer.twitter.href" :title="footer.twitter.title">
+                </CustomLink>
+                <CustomLink :href="footer.twitter.href" :title="footer.twitter.title">
                     <Twitter :title="footer.twitter.title"/>
-                </Link>
+                </CustomLink>
             </template>
             <template v-slot:legal>
                 <span>{{footer.licence}}</span>
