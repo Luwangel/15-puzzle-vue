@@ -2,13 +2,14 @@
 export default {
   name: "Link",
   props: {
+    title: { type: String, default: "" },
     href: { type: String, default: "" }
   }
 };
 </script>
 
 <template>
-  <a :href="href">
+  <a :href="href" :title="title">
     <slot/>
   </a>
 </template>
@@ -18,7 +19,7 @@ a {
   cursor: pointer;
   color: #424fb9;
   transition: all 0.15s ease;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   outline: none;
   text-decoration: none;
 }
