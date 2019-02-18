@@ -66,8 +66,8 @@ export default {
         </Link>
       </template>
       <template v-slot:legal>
-        <span class="footer-text">{{footer.licence}}</span>
-        <span class="footer-text">{{footer.copyright}}</span>
+        <span>{{footer.licence}}</span>
+        <span>{{footer.copyright}}</span>
       </template>
     </Footer>
   </div>
@@ -102,12 +102,16 @@ body {
   font-weight: 500;
 }
 
-.footer-text {
-  color: #fff;
+.footer {
+  color: #999;
 }
 
-.footer-link {
-  color: #fff;
+.footer span svg path {
+  fill: #999;
+}
+
+.footer span:hover svg path {
+  fill: #000;
 }
 </style>
 
