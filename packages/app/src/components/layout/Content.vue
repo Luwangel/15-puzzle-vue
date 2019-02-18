@@ -19,8 +19,8 @@ main {
   align-content: center;
 
   padding: 5px;
-  height: 100%;
-  min-height: 100%;
+  height: calc(80%);
+  min-height: 70vh;
   margin-top: 80px;
   width: calc(100% - 10px);
 }
