@@ -7,7 +7,12 @@ export default {
 <template>
   <footer>
     <div class="container">
-      <slot/>
+      <p class="links">
+        <slot name="links"/>
+      </p>
+      <p>
+        <slot name="legal"/>
+      </p>
     </div>
   </footer>
 </template>
@@ -17,18 +22,29 @@ footer {
   display: flex;
   align-items: center;
 
-  padding: 5px;
-  height: 50px;
-  min-height: 50px;
-  width: calc(100% - 10px);
+  background-color: #727f80;
+  min-height: 200px;
 }
 
 .container {
+  padding: 35px 40px;
+  height: 100%;
+  width: calc(100% - 10px);
+}
+
+p {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  height: 100%;
-  width: calc(100%);
+  width: 100%;
+}
+
+.links {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 </style>
