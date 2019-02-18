@@ -22,7 +22,7 @@ footer {
   display: flex;
   align-items: center;
 
-  background-color: #727f80;
+  background-color: #f6f6f6;
   min-height: 200px;
 }
 
