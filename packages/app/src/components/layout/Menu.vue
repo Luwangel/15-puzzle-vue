@@ -1,7 +1,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 
-import Button from "../components/ui/Button";
+import Button from "../ui/Button";
 
 export default {
   name: "MyMenu",
