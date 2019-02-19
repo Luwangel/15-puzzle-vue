@@ -4,6 +4,7 @@
         SILVER,
         BRONZE,
         NOT_RANKED,
+        NOT_STARTED,
         levelByMoves
     } from "../../../../core/src/levels";
 
@@ -26,7 +27,7 @@
             classes() {
                 const level = levelByMoves(this.turn);
                 return {
-                    start: level === NOT_RANKED,
+                    start: level === NOT_STARTED,
                     bad: level === NOT_RANKED,
                     normal: level === BRONZE,
                     good: level === SILVER,
@@ -53,7 +54,7 @@
     }
 
     .start {
-        color: inherit;
+        color: #2c3e52;
     }
 
     .bad {
