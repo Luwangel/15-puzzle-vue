@@ -21,7 +21,7 @@
         padding: 5px;
         height: calc(80%);
         min-height: 70vh;
-        margin-top: 80px;
+        margin: 80px 0 30px 0;
         width: calc(100% - 10px);
     }
 
