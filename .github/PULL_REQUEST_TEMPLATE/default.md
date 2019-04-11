@@ -5,7 +5,7 @@ Start by explaining why you're opening this pull request.
 
 ## Todo
 
-Then, list yours todos:
+Then, list how to achieve this PR:
 
 - [x] Completed
 - [x] Also Completed
