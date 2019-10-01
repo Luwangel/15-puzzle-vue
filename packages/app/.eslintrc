@@ -1,11 +1,32 @@
 {
-    "root": true,
     "env": {
         "es6": true,
         "node": true
     },
-    "extends": ["eslint:recommended", "plugin:vue/essential"],
-    "rules": {},
+    "extends": ["eslint:recommended", "plugin:vue/essential", "prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "tabWidth": 4,
+                "trailingComma": "all"
+            }
+        ],
+        "no-console": [
+            "warn",
+            {
+                "allow": ["warn", "error"]
+            }
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": true
+            }
+        ]
+    },
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module",

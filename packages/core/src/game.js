@@ -100,9 +100,7 @@ export const isTileInMovableTiles = (grid, tileToMove) =>
 
 export const move = (grid, coordsTileToMove) => {
     if (!isCoordsTileInMovableTiles(grid, coordsTileToMove)) {
-        throw `The tile at coords (${coordsTileToMove.y}, ${
-            coordsTileToMove.x
-        }) is not movable.`;
+        throw `The tile at coords (${coordsTileToMove.y}, ${coordsTileToMove.x}) is not movable.`;
     }
 
     let emptyTileCoords = findEmptyTile(grid);

@@ -23,12 +23,12 @@ const actions = {
             newGame.size = DEFAULT_SIZE;
 
             newGame.imageCoords = associateTileToBackground(
-                newGame.resolvedGrid
+                newGame.resolvedGrid,
             );
 
             const { dimensionStyle, tileSize } = buildResponsiveDimension(
                 true,
-                newGame.resolvedGrid.length
+                newGame.resolvedGrid.length,
             );
             newGame.dimensionStyle = dimensionStyle;
             newGame.tileSize = tileSize;
