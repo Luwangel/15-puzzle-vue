@@ -1,10 +1,10 @@
 <script>
-    export default {
-        name: "TileEmpty",
-        props: {
-            dimensionStyle: Object
-        }
-    };
+export default {
+    name: 'TileEmpty',
+    props: {
+        dimensionStyle: Object,
+    },
+};
 </script>
 
 <template>
@@ -12,8 +12,8 @@
 </template>
 
 <style scoped>
-    .puzzle-tile {
-        user-select: none;
-        border-radius: 4px;
-    }
+.puzzle-tile {
+    user-select: none;
+    border-radius: 4px;
+}
 </style>
