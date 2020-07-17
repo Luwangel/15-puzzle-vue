@@ -23,6 +23,8 @@ export default {
         Twitter,
     },
     data() {
+        const date = new Date().getFullYear();
+
         return {
             title: 'Play the 15 Puzzle Game',
             footer: {
@@ -35,7 +37,7 @@ export default {
                     title: 'luwangel/15-puzzle-vue',
                 },
                 licence: 'Released under the MIT License',
-                copyright: 'Copyright ©2019 Luwangel',
+                copyright: `Copyright ©${date} Luwangel`,
             },
         };
     },
