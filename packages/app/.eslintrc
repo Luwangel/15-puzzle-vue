@@ -1,6 +1,15 @@
 {
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true
+        }
+    },
     "env": {
-        "es6": true,
+        "browser": true,
+        "es2020": true,
+        "jest": true,
         "node": true
     },
     "extends": ["eslint:recommended", "plugin:vue/essential", "prettier"],
@@ -26,12 +35,5 @@
                 "ignoreRestSiblings": true
             }
         ]
-    },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "modules": true
-        }
     }
 }
