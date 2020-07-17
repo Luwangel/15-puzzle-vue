@@ -8,9 +8,9 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@babel/core": "~7.6.2",
-        "@babel/preset-env": "~7.6.2",
-        "babel-eslint": "~10.0.3",
+        "@babel/core": "~7.10.5",
+        "@babel/preset-env": "~7.10.4",
+        "babel-eslint": "~10.1.0",
         "babel-jest": "~24.8.0",
         "eslint": "~7.4.0",
         "eslint-config-prettier": "~6.11.0",
