@@ -10,7 +10,7 @@ Play the 15 Puzzle everywhere.
 
 **Tip:** Type `make help` to see all the available commands.
 
-Before starting, you should know that this repo is based on [Yarn](https://yarnpkg.com). This is mostly motivated by the usage of workspaces to split the code wisely.
+Before starting, you should know that this repository is based on [Yarn](https://yarnpkg.com). This is mostly motivated by the usage of workspaces to split the code wisely.
 
 ### First Installation
 
@@ -18,11 +18,11 @@ Install all dependencies with `make install`.
 
 ### Run Development Server
 
-Start the development server with `make run`. The site is available on [localhost:8080](http://localhost:8080/).
+Start the development server with `make run`. The website is available at [localhost:8080](http://localhost:8080/).
 
 ### Tests
 
-Not yet tested 🙁
+The core application is tested. Run the tests using `make test`.
 
 ## Build & Deployment
 
